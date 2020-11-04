@@ -8,6 +8,7 @@ Also since the whole process like the wallet creation and uploading is in-built 
 
 # Project Structure
 
+```
 .
 ├── client                  # The create-react-app 
 ├── contracts               # Smart contracts
@@ -16,3 +17,4 @@ Also since the whole process like the wallet creation and uploading is in-built 
 ├── LICENSE
 └── README.md
 └── truffle-config.js
+```
