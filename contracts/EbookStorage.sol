@@ -27,6 +27,7 @@ contract EbookStorage  {
     mapping (address => mapping(string => bool)) public isEbookOwned;
 
 
+    event purchasedBookEvent(address indexed _client, address indexed _author, string indexed _source, uint _amount);
 
     modifier isNotIssued(string memory _source) {
         require(authorOf[_source] == address(0), 'Book is already issued');
@@ -57,11 +58,16 @@ contract EbookStorage  {
 
 
 
-    function purchaseBook(address _author,  string memory _source, uint _amount) public external isNotPurchased(_source) {
+    function purchaseBook(address _author,  string calldata _source, uint _amount)  isNotPurchased(_source) external {
+        require(authorOf[_source] == _author, 'Author has not issued that ebook');
         require(token.transferFrom(msg.sender, _author, _amount), 'Transaction failed');
+
 
         // add the book to the client's library
         clientLib[msg.sender][clientLibCount[msg.sender]] = _source;
+        isEbookOwned[msg.sender][_source] = true;
         clientLibCount[msg.sender]++;
+        
+        purchasedBookEvent(msg.sender, _author, _source, _amount);
     }
 }

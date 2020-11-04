@@ -7,6 +7,6 @@ contract DBookToken is ERC20 {
     constructor() ERC20("DBookToken", "DBKT") public {}
 
     function faucet(address _to, uint _amount) external {
-        _mint(to, _amount);
+        _mint(_to, _amount);
     }
 }
