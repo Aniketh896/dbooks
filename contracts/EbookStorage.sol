@@ -29,6 +29,8 @@ contract EbookStorage  {
 
     event purchasedBookEvent(address indexed _client, address indexed _author, string indexed _source, uint _amount);
 
+    event publishedBookEvent(address indexed _author, string indexed _source);
+
     modifier isNotIssued(string memory _source) {
         require(authorOf[_source] == address(0), 'Book is already issued');
         _;
@@ -54,6 +56,8 @@ contract EbookStorage  {
         ebookSource[msg.sender][ebookCount[msg.sender]] = _source;
         authorOf[_source] = msg.sender;
         ebookCount[msg.sender]++;
+
+        publishedBookEvent(msg.sender, _source);
     }
 
 
