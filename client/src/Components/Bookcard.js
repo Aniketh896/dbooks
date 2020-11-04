@@ -7,12 +7,17 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid'
+
 import { CenterFocusStrong } from '@material-ui/icons';
 import { Container } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: 250,
+    maxHeight: 250,
+    marginLeft: '20px',
+    marginRight: '20px'
   },
   img: {
     objectFit: "contain",
@@ -24,7 +29,20 @@ export default function ImgMediaCard() {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <div>
+      {/* <Grid container spacing = {4} className={classes.gridContainer}  alignItems="center">
+        <Grid item xs={12} sm={6} md={4}>
+          <Bookcard />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Bookcard />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Bookcard />
+        </Grid>
+      </Grid> */}
+
+      <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
           className={classes.img}  
@@ -52,5 +70,8 @@ export default function ImgMediaCard() {
         </Button>
       </CardActions>
     </Card>
+    </div>
+
+    
   );
 }
