@@ -1,8 +1,12 @@
-const { deployProxy } = require('@openzeppelin/truffle-upgrades')
+const DBookToken = artifacts.require('DBookToken')
+const EbookStorage = artifacts.require('EbookStorage')
 
-const ComplexStorage = artifacts.require('ComplexStorage')
+module.exports = function (deployer) {
+	deployer.deploy(DBookToken).then(token => {
+		console.log('Deployed DBookToken', DBookToken.address)
 
-module.exports = async function (deployer) {
-	const instance = await deployProxy(ComplexStorage, [42], { deployer })
-	console.log('Deployed', instance.address)
+		deployer.deploy(EbookStorage, DBookToken.address).then(estorage => {
+			console.log('Deployed EbookStorage', EbookStorage.address)
+		})
+	})
 }

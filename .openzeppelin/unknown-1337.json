@@ -1,0 +1,109 @@
+{
+  "manifestVersion": "3.1",
+  "impls": {
+    "ccffdcfa94daefe232df1fd82993009c5b00c006f03dca2de201c276fccda68e": {
+      "address": "0x60b367c675aec915FB4ED008cd184f558334fce9",
+      "txHash": "0x2e7e55430bbee18bcd10dd30544db8e2b719588e0f8759af341432ff8fe042c0",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "initialized",
+            "type": "t_bool",
+            "src": "../@openzeppelin/upgrades-core/contracts/Initializable.sol:23"
+          },
+          {
+            "contract": "Initializable",
+            "label": "initializing",
+            "type": "t_bool",
+            "src": "../@openzeppelin/upgrades-core/contracts/Initializable.sol:28"
+          },
+          {
+            "contract": "Initializable",
+            "label": "______gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "../@openzeppelin/upgrades-core/contracts/Initializable.sol:63"
+          },
+          {
+            "contract": "EbookStorage",
+            "label": "owner",
+            "type": "t_address",
+            "src": "EbookStorage.sol:8"
+          },
+          {
+            "contract": "EbookStorage",
+            "label": "token",
+            "type": "t_contract(DBookToken)21",
+            "src": "EbookStorage.sol:9"
+          },
+          {
+            "contract": "EbookStorage",
+            "label": "ebookSource",
+            "type": "t_mapping(t_address,t_mapping(t_uint256,t_bytes32))",
+            "src": "EbookStorage.sol:14"
+          },
+          {
+            "contract": "EbookStorage",
+            "label": "ebookCount",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "EbookStorage.sol:16"
+          },
+          {
+            "contract": "EbookStorage",
+            "label": "authorOf",
+            "type": "t_mapping(t_bytes32,t_address)",
+            "src": "EbookStorage.sol:18"
+          },
+          {
+            "contract": "EbookStorage",
+            "label": "clientLib",
+            "type": "t_mapping(t_address,t_mapping(t_uint256,t_bytes32))",
+            "src": "EbookStorage.sol:23"
+          },
+          {
+            "contract": "EbookStorage",
+            "label": "clientLibCount",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "EbookStorage.sol:25"
+          },
+          {
+            "contract": "EbookStorage",
+            "label": "isEbookOwned",
+            "type": "t_mapping(t_address,t_mapping(t_bytes32,t_bool))",
+            "src": "EbookStorage.sol:27"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address"
+          },
+          "t_contract(DBookToken)21": {
+            "label": "contract DBookToken"
+          },
+          "t_mapping(t_address,t_mapping(t_uint256,t_bytes32))": {
+            "label": "mapping(address => mapping(uint256 => bytes32))"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_bytes32,t_address)": {
+            "label": "mapping(bytes32 => address)"
+          },
+          "t_mapping(t_address,t_mapping(t_bytes32,t_bool))": {
+            "label": "mapping(address => mapping(bytes32 => bool))"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          }
+        }
+      }
+    }
+  },
+  "admin": {
+    "address": "0x2f097f808C4DD2d5068E4F8E3BCd5B1220e9f708",
+    "txHash": "0xadd82fde23be29b0f3e9815fdf18ce28480060cd521313c13336021fd467af94"
+  }
+}
