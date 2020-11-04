@@ -9,7 +9,12 @@ contract('EbookStorage', accounts => {
 	const [author1, author2, client1, client2, ...others] = accounts
 
 	const _source1 = 'QxSdisoUDoasduoagdlhagd'
+	const _title1 = 'Title 1'
+	const _price1 = web3.utils.toWei('100')
+
 	const _source2 = 'QxSdisoUDoasdsuoagdlhagd'
+	const _title2 = 'Title 2'
+	const _price2 = web3.utils.toWei('100')
 
 	before(async () => {
 		this.DBookTokenInstance = await DBookToken.deployed()
@@ -32,26 +37,35 @@ contract('EbookStorage', accounts => {
 
 	describe('Publish books', () => {
 		it('should publish new book successfully', async () => {
-			await this.EbookStorageInstance.publishBook(_source1, { from: author1 })
-			assert.equal(await this.EbookStorageInstance.ebookSource(author1, 0), _source1)
+			await this.EbookStorageInstance.publishBook(_source1, _title1, _price1, {
+				from: author1,
+			})
+			const ebookPublished = await this.EbookStorageInstance.ebookSource(author1, 0)
+			assert.equal(ebookPublished[0], _title1)
+			assert.equal(ebookPublished[1], _source1)
+			assert.equal(ebookPublished[2], _price1)
 
 			assert.equal(await this.EbookStorageInstance.authorOf(_source1), author1)
+			assert.equal(await this.EbookStorageInstance.sourceToTitle(_source1), _title1)
+			assert.equal(await this.EbookStorageInstance.sourceToPrice(_source1), _price1)
 		})
 
 		it('should fail to publish the same book', async () => {
-			this.EbookStorageInstance.publishBook(_source1, {
+			this.EbookStorageInstance.publishBook(_source1, _title1, _price1, {
 				from: author1,
 			}).should.be.rejectedWith('Book is already issued')
 		})
 
 		it('should fail to publish issued book', async () => {
-			this.EbookStorageInstance.publishBook(_source1, {
+			this.EbookStorageInstance.publishBook(_source1, _title1, _price1, {
 				from: author2,
 			}).should.be.rejectedWith('Book is already issued')
 		})
 
 		it('should have the correct ebook count', async () => {
-			await this.EbookStorageInstance.publishBook(_source2, { from: author1 })
+			await this.EbookStorageInstance.publishBook(_source2, _title2, _price2, {
+				from: author1,
+			})
 
 			assert.equal(await this.EbookStorageInstance.ebookCount(author1), 2)
 		})
@@ -62,13 +76,19 @@ contract('EbookStorage', accounts => {
 			await this.EbookStorageInstance.purchaseBook(
 				author1,
 				_source1,
-				web3.utils.toWei('10000'),
+				web3.utils.toWei('100'),
 				{
 					from: client1,
 				}
 			)
 
-			assert.equal(await this.EbookStorageInstance.clientLib(client1, 0), _source1)
+			const ebookPurchased = await this.EbookStorageInstance.clientLib(client1, 0)
+			assert.equal(ebookPurchased[0], _title1)
+			assert.equal(ebookPurchased[1], _source1)
+			assert.equal(ebookPurchased[2], _price1)
+
+			assert.equal(await this.EbookStorageInstance.clientLibCount(client1), 1)
+			assert(await this.EbookStorageInstance.isEbookOwned(client1, _source1))
 		})
 
 		it('should fail to purchase the same book again', async () => {
@@ -82,5 +102,11 @@ contract('EbookStorage', accounts => {
 				from: client1,
 			}).should.be.rejectedWith('Author has not issued that ebook')
 		})
+
+		// it('should fail to purchase a book due to insufficient funds', async () => {
+		// 	this.EbookStorageInstance.purchaseBook(author2, _source1, web3.utils.toWei('10000'), {
+		// 		from: client1,
+		// 	}).should.be.rejectedWith('Author has not issued that ebook')
+		// })
 	})
 })
