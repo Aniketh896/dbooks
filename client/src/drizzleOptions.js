@@ -1,5 +1,4 @@
 import Web3 from 'web3'
-import ComplexStorage from './contracts/ComplexStorage.json'
 import Portis from '@portis/web3'
 
 const portis = new Portis('335b9cd6-cb46-4c1c-a7e4-cc529f269bc1', 'maticMumbai')
@@ -9,7 +8,7 @@ const options = {
 		block: false,
 		customProvider: new Web3(portis.provider),
 	},
-	contracts: [ComplexStorage],
+	contracts: [],
 	events: {},
 }
 
