@@ -1,5 +1,7 @@
 # dbooks
-dbooks is a blockchain based Decentralized EBooks marketplace. This provides an unrestricted and uncensored place for people to buy and sell ebooks. All the transactions are done using p2p network.
+dbooks is a blockchain based Decentralized EBooks marketplace. This provides an unrestricted and uncensored place for people to buy and sell ebooks. All the transactions are done using p2p network with no central moderator or mediater, this provides the authors better margin on sales as well as allows the readers to purchase the books for cheap due to next-to-none additional charges. 
+
+Also since the whole process like the wallet creation and uploading is in-built along with Ebooks Reader, piracy can be curbed as the books cannot be downloaded externally or shared with others.
 
 # Getting Started with Create React App
 
