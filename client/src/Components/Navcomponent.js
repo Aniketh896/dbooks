@@ -24,8 +24,8 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{backgroundColor: "#0F1849"}}>
-        <Toolbar>
+      <AppBar position="static" style={{backgroundColor: "#0F1849", height:"63.99px"}}>
+        <Toolbar style={{margin: "auto 0"}}>
           <img src="https://www.flaticon.com/svg/static/icons/svg/236/236832.svg" alt="userpic" style={{width: '40px'}}/>
           <Typography variant="h6" className={classes.title} style={{marginLeft:'10px'}}>
             User_Name
