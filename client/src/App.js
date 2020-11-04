@@ -12,7 +12,7 @@ const drizzle = new Drizzle(drizzleOptions);
 const App = () => {
   return (
     <div className='container'>
-      {/* <DrizzleContext.Provider drizzle={drizzle}>
+      <DrizzleContext.Provider drizzle={drizzle}>
         <DrizzleContext.Consumer>
           {drizzleContext => {
             const { drizzle, drizzleState, initialized } = drizzleContext;
@@ -26,7 +26,7 @@ const App = () => {
             )
           }}
         </DrizzleContext.Consumer>
-      </DrizzleContext.Provider> */}
+      </DrizzleContext.Provider>
       <Navcomponent />
     </div>
     
