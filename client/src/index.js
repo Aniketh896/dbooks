@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { DrizzleContext } from '@drizzle/react-plugin'
 import { Drizzle } from '@drizzle/store'
 
+import FormPage from "./Components/pages/Forms";
+
 import App from './App';
 import drizzleOptions from './drizzleOptions'
 import * as serviceWorker from './serviceWorker'
@@ -24,7 +26,7 @@ const AppWrapper = () => (
 	</DrizzleContext.Provider>
 )
 
-ReactDOM.render(<AppWrapper />, document.getElementById('root'))
+ReactDOM.render(<AppWrapper />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
