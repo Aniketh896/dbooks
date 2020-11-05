@@ -113,6 +113,10 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 
 const useStyles = makeStyles(theme => ({
 	container: {
-		
-	}
+		marginTop: '20%',
+		backgroundColor: '#17141d',
+		height: '100%',
+		width: '100%',
+		color: '#e4e4e4',
+	},
 }))

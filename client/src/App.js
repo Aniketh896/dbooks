@@ -17,16 +17,16 @@ import Profilepage from './Components/pages/Profilepage'
 const App = props => {
 	const classes = useStyles()
 	const { initialized } = props
-	
+
 	const [loading, setLoading] = useState(false)
 
-	useEffect(() => {
-		if (initialized) {
-			setLoading(false)
-		} else {
-			setLoading(true)
-		}
-	}, [initialized])
+	// useEffect(() => {
+	// 	if (initialized) {
+	// 		setLoading(false)
+	// 	} else {
+	// 		setLoading(true)
+	// 	}
+	// }, [initialized])
 
 	const [walletAddress, setWalletAddress] = useState()
 	const [email, setEmail] = useState()
@@ -82,6 +82,7 @@ const App = props => {
 				open={loading}
 				aria-labelledby='simple-modal-title'
 				aria-describedby='simple-modal-description'
+				style={{ display: 'grid', placeItems: 'center' }}
 				BackdropProps={{ style: { backgroundColor: '#17141d' } }}>
 				<LoadingImg />
 			</Modal>

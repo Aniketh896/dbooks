@@ -55,8 +55,6 @@ const DrizzleForm = ({ drizzle, drizzleState, initialized, method, children }) =
 export default DrizzleForm
 
 const useStyles = makeStyles(theme => ({
-	formContainer: {
-		
-	}
+	
 }))
 
