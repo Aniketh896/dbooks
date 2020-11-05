@@ -7,6 +7,15 @@ import { portis } from './drizzleOptions'
 import { makeStyles } from '@material-ui/core'
 import './App.css'
 
+
+const ipfsClient = require('ipfs-http-client')
+const ipfs = ipfsClient({host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
+
+//to add files to ipfs when using it, under event handler.
+/*ipfs.add(this.state.buffer, (error,result) => {
+	//do stuff here...
+})*/
+
 const App = props => {
 	const classes = useStyles()
 

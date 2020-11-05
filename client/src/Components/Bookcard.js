@@ -47,7 +47,7 @@ export default function ImgMediaCard() {
         <CardMedia
           className={classes.img}  
           component="img"
-          alt="Contemplative Reptile"
+          alt="Book image"
           height="140"
           image='http://3.bp.blogspot.com/-vpM2K_Dtt5k/UYk0uk9jMGI/AAAAAAAAB7E/ZHWz8VkFeSo/s1600/HorrorCover017.jpg'
           title="Contemplative Reptile"
