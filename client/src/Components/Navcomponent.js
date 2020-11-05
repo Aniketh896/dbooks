@@ -4,6 +4,7 @@ import { AppBar } from '@material-ui/core';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+
 // import IconButton from '@material-ui/core/IconButton';
 // import MenuIcon from '@material-ui/icons/Menu';
 
@@ -48,24 +49,34 @@ export default function NavComponent({ walletAddress, email, reputation }) {
 							</Typography>
 						</>
 					)}
-					<Button color='inherit' style={{ marginRight: '10px' }}>
-						Home
-					</Button>
-					<Button color='inherit' style={{ marginRight: '10px' }}>
-						Publish
-					</Button>
+					
 					{walletAddress ? (
-						<Button
+						<>
+            <Button color='inherit' style={{ marginRight: '10px' }}>
+              Home
+            </Button>
+            <Button color='inherit' style={{ marginRight: '10px' }}>
+              User account
+            </Button>
+            <Button color='inherit' style={{ marginRight: '10px' }}>
+              Publish
+            </Button>
+            <Button
 							style={({ color: 'inherit' }, { backgroundColor: '#E7CAEC' })}
 							onClick={e => portis.logout()}>
 							Log out
 						</Button>
+            
+            </>
 					) : (
-						<Button
+            <div style={{marginLeft: 'auto'}}>
+              <Button
 							style={({ color: 'inherit' }, { backgroundColor: '#E7CAEC' })}
 							onClick={e => portis.showPortis()}>
 							Login
 						</Button>
+            </div>
+						
 					)}
 				</Toolbar>
 			</AppBar>

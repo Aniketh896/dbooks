@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import EBookListing from './Components/EBookListing'
 import Navcomponent from './Components/Navcomponent'
 import Homepage from './Components/pages/Homepage'
+import Profilepage from './Components/pages/Profilepage'
 import { portis } from './drizzleOptions'
 import { makeStyles } from '@material-ui/core'
 import './App.css'
@@ -40,6 +41,7 @@ const App = props => {
 			<div className='container' style={{ display: 'flex', flexDirection: 'column' }}>
 				<EBookListing {...props} />
 				<Homepage />
+				<Profilepage />
 			</div>
 		</div>
 	)
