@@ -13,6 +13,9 @@ contract('DBookToken', accounts => {
 
 		it('has a valid address ', async () => {
 			this.token.address.should.not.equal('')
+			this.token.address.should.not.equal(0x0)
+			this.token.address.should.not.equal(null)
+			this.token.address.should.not.equal(undefined)
 		})
 
 		it('has the correct name ', async () => {
