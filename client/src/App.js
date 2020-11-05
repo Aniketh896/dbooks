@@ -13,6 +13,8 @@ import LoadingImg from './Components/Loading'
 import './App.css'
 import PublishBook from './Components/PublishBook'
 import Profilepage from './Components/pages/Profilepage'
+import ReactReader from './Components/pages/ReactReader'
+
 
 const App = props => {
 	const classes = useStyles()
@@ -58,6 +60,7 @@ const App = props => {
 			</div>
 			<div className='container' style={{ display: 'flex', flexDirection: 'column' }}>
 				<Switch className='route-wrapper'>
+<<<<<<< Updated upstream
 					{walletAddress ? (
 						<>
 							<Route exact path='/'>
@@ -84,6 +87,29 @@ const App = props => {
 							</div>
 						)}
 					
+=======
+					<Route exact path='/'>
+						<Homepage {...props} />
+					</Route>
+					<Route exact path='/ebooks'>
+						<EBookListing {...props} />
+					</Route>
+					<Route exact path='/user'>
+						<Profilepage {...props} />
+					</Route>
+					<Route exact path='/publish'>
+						<PublishBook {...props} />
+					</Route>
+					<Route exact path='/purchase'>
+						<EBookListing {...props} />
+					</Route>
+					<Route exact path='/clientLibrary'>
+						<EBookListing {...props} />
+					</Route>
+					<Route exact path='/ReactReader'>
+						<ReactReader {...props} />
+					</Route>
+>>>>>>> Stashed changes
 				</Switch>
 			</div>
 			<Modal
