@@ -57,37 +57,34 @@ export const booksList = [
 } */
 
 
-const Card = (props) => {
+export const Card = props => {
+	const { authorAddress, title, genre, ipfsHash, date } = props
 
-  const {author, title, genre, date} = props;
+	return (
+		<article className='card'>
+			<header className='card-title'>
+				<p>{date}</p>
+				<h2>{title}</h2>
+			</header>
 
-  return (
-          <article class="card">
-            <header class="card-title">
-              <p>{ date }</p>
-              <h2>{ title }</h2>
-            </header>
+			<div className='card-author'>
+				<a className='author-avatar' href='#'>
+					<img src='../dbooks-logo.svg' />
+				</a>
+				<svg className='half-circle' viewBox='0 0 106 57'>
+					<path d='M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4'></path>
+				</svg>
 
-            <div class="card-author">
-              <a class="author-avatar" href="#">
-                <img src="../dbooks-logo.svg" />
-              </a>
-              <svg class="half-circle" viewBox="0 0 106 57">
-                <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
-              </svg>
-
-              <div class="author">
-                <div class="author-heading">Author</div>
-                { author }
-              </div>
-            </div>
-            <div class="tags">
-              <a href="#">{ genre }</a>
-            </div>
-          </article>
-
-          
-  );
+				<div className='author'>
+					<div className='author-heading'>Author</div>
+					{authorAddress}
+				</div>
+			</div>
+			<div className='tags'>
+				<a href='#'>{genre}</a>
+			</div>
+		</article>
+	)
 }
 
 const Book = () => {

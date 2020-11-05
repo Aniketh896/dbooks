@@ -28,8 +28,8 @@ export default function NavComponent({ walletAddress, email, reputation }) {
 		<div className={classes.root}>
 			<AppBar position='static' style={{ backgroundColor: '#0F1849', height: '63.99px' }}>
 				<Toolbar style={{ margin: 'auto 0' }}>
-					{walletAddress &&
-						<> 
+					{walletAddress && (
+						<>
 							<img
 								src='https://www.flaticon.com/svg/static/icons/svg/236/236832.svg'
 								alt='userpic'
@@ -39,24 +39,34 @@ export default function NavComponent({ walletAddress, email, reputation }) {
 								variant='h6'
 								className={classes.title}
 								style={{ marginLeft: '10px' }}>
-								{walletAddress.slice(0, 4) + '...' + walletAddress.slice(walletAddress.length - 4, walletAddress.length)}
+								{walletAddress.slice(0, 4) +
+									'...' +
+									walletAddress.slice(
+										walletAddress.length - 4,
+										walletAddress.length
+									)}
 							</Typography>
 						</>
-					}
+					)}
 					<Button color='inherit' style={{ marginRight: '10px' }}>
 						Home
 					</Button>
 					<Button color='inherit' style={{ marginRight: '10px' }}>
 						Publish
 					</Button>
-					{walletAddress ? 
-						<Button style={({ color: 'inherit' }, { backgroundColor: '#E7CAEC' })} onClick={e => portis.logout()}>
-						Log out
-						</Button> :
-						<Button style={({ color: 'inherit' }, { backgroundColor: '#E7CAEC' })} onClick={e => portis.showPortis()} >
+					{walletAddress ? (
+						<Button
+							style={({ color: 'inherit' }, { backgroundColor: '#E7CAEC' })}
+							onClick={e => portis.logout()}>
+							Log out
+						</Button>
+					) : (
+						<Button
+							style={({ color: 'inherit' }, { backgroundColor: '#E7CAEC' })}
+							onClick={e => portis.showPortis()}>
 							Login
 						</Button>
-					}
+					)}
 				</Toolbar>
 			</AppBar>
 		</div>

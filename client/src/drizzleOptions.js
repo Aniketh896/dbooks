@@ -2,6 +2,7 @@ import Web3 from 'web3'
 import Portis from '@portis/web3'
 
 import EBookStorage from './contracts/EBookStorage.json'
+import DBookToken from './contracts/DBookToken.json'
 
 const localNode = {
 	nodeUrl: 'http://127.0.0.1:8545/',
@@ -16,8 +17,10 @@ const options = {
 		block: false,
 		customProvider: new Web3(portis.provider),
 	},
-	pcontracts: [EBookStorage],
-	events: {},
+	contracts: [EBookStorage, DBookToken],
+	events: {
+		EBookStorage: ['publishedBookEvent', 'purchasedBookEvent'],
+	},
 }
 
 export default options
