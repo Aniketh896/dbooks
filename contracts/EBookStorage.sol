@@ -4,7 +4,7 @@ pragma solidity ^0.6.0;
 // import "@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol";
 import './DBookToken.sol';
 
-contract EbookStorage  {
+contract EBookStorage  {
     address owner;
     DBookToken public token;
 
