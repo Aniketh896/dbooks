@@ -90,7 +90,7 @@ contract('EBookStorage', accounts => {
 			assert.equal(await this.EBookStorageInstance.clientLibCount(client1), 1)
 			assert(await this.EBookStorageInstance.isEbookOwned(client1, _source1))
 		})
-
+		client1
 		it('should fail to purchase the same book again', async () => {
 			this.EBookStorageInstance.purchaseBook(author1, _source1, web3.utils.toWei('10000'), {
 				from: client1,
@@ -103,10 +103,10 @@ contract('EBookStorage', accounts => {
 			}).should.be.rejectedWith('Author has not issued that ebook')
 		})
 
-		// it('should fail to purchase a book due to insufficient funds', async () => {
-		// 	this.EbookStorageInstance.purchaseBook(author2, _source1, web3.utils.toWei('10000'), {
-		// 		from: client1,
-		// 	}).should.be.rejectedWith('Author has not issued that ebook')
-		// })
+		it('should fail to purchase a book due to insufficient funds', async () => {
+			this.EBookStorageInstance.purchaseBook(author1, _source1, web3.utils.toWei('10'), {
+				from: client2,
+			}).should.be.rejectedWith('Wrong amount of funds')
+		})
 	})
 })

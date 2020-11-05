@@ -58,7 +58,7 @@ export const booksList = [
 
 
 export const Card = props => {
-	const { authorAddress, title, genre, ipfsHash, date } = props
+	const { authorAddress, title, genre, ipfsHash, price, date } = props
 
 	return (
 		<article className='card'>
@@ -77,7 +77,9 @@ export const Card = props => {
 
 				<div className='author'>
 					<div className='author-heading'>Author</div>
-					{authorAddress}
+					{authorAddress.slice(0, 4) +
+						'...' +
+						authorAddress.slice(authorAddress.length - 4, authorAddress.length)}
 				</div>
 			</div>
 			<div className='tags'>

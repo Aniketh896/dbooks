@@ -1,28 +1,30 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { AppBar } from '@material-ui/core';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-
-// import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
+import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import { AppBar } from '@material-ui/core'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
+import { Link } from 'react-router-dom'
 
 import { portis } from '../drizzleOptions'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
+const useStyles = makeStyles(theme => ({
+	root: {
+		flexGrow: 1,
+		zIndex: 200,
+	},
+	menuButton: {
+		marginRight: theme.spacing(2),
+	},
+	title: {
+		flexGrow: 1,
+	},
+	links: {
+		color: 'white',
+	}
+}))
 
-export default function NavComponent({ walletAddress, email, reputation }) {
+export default function Navcomponent({ walletAddress, email, reputation }) {
 	const classes = useStyles()
 
 	return (
@@ -50,18 +52,28 @@ export default function NavComponent({ walletAddress, email, reputation }) {
 						</>
 					)}
 					
+
 					{walletAddress ? (
 						<>
-            <Button color='inherit' style={{ marginRight: '10px' }}>
-              Home
-            </Button>
-            <Button color='inherit' style={{ marginRight: '10px' }}>
-              User account
-            </Button>
-            <Button color='inherit' style={{ marginRight: '10px' }}>
-              Publish
-            </Button>
-            <Button
+							<Link to='/' className={classes.links}>
+								<Button color='inherit' style={{ marginRight: '10px' }}>
+									Home
+								</Button>
+							</Link>
+
+							<Link to='/user' className={classes.links}>
+								<Button color='inherit' style={{ marginRight: '10px' }}>
+									User
+								</Button>
+							</Link>
+
+							<Link to='/publish' className={classes.links}>
+								<Button color='inherit' style={{ marginRight: '10px' }}>
+									Publish
+								</Button>
+							</Link>
+
+           				 <Button
 							style={({ color: 'inherit' }, { backgroundColor: '#E7CAEC' })}
 							onClick={e => portis.logout()}>
 							Log out

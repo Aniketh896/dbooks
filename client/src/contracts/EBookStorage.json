@@ -7927,10 +7927,79 @@
       "links": {},
       "address": "0x7777039DF6EDf9D522fFea54B2dc309C3e1Bdb84",
       "transactionHash": "0x7d70d13b7abac800c1d787490abc1c122da9105d36b62d8cccc2b9d1b2539a0e"
+    },
+    "80001": {
+      "events": {
+        "0xdd591308ce829350fc08d50cd74030309d522466370e7caf533c20ae5b8c87f8": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_author",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "_source",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "_title",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_price",
+              "type": "uint256"
+            }
+          ],
+          "name": "publishedBookEvent",
+          "type": "event"
+        },
+        "0xa7b4a51ece4d55c1b16e3ad90e9c80970b7d81e1b8ef6cce6a78affc86a9185d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_client",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_author",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "_source",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "purchasedBookEvent",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x7777039DF6EDf9D522fFea54B2dc309C3e1Bdb84",
+      "transactionHash": "0x561a74f9a78f0c0dbaccac8f72fe531cc0cfe50f31cd7f92af5ddb372855701d"
     }
   },
   "schemaVersion": "3.3.1",
-  "updatedAt": "2020-11-05T09:51:13.255Z",
+  "updatedAt": "2020-11-05T15:03:52.388Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

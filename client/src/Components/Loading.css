@@ -1,0 +1,20 @@
+.cls-1 {
+        fill: #ff6350;
+}
+
+.cls-2 {
+        fill: #fff;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% {  transform: rotate(359deg); }
+}
+
+#Layer_1 {
+    animation: spin 2s linear infinite;
+    width: 12rem;
+    height: 12rem;
+    margin-left : 48rem;
+    margin-top : 19rem;
+}

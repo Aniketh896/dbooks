@@ -50,8 +50,7 @@ bookcard: {
 
 const Homepage = () => {
 
-
-    const classes = useStyles();
+const classes = useStyles();
 
     return (
         <div>
