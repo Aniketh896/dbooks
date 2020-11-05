@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
 
 import Tabmenu from '../Tabmenu'
+import dp from '../../adarsh.png';
 
 const useStyles = makeStyles({
 
@@ -72,7 +73,7 @@ const Profilepage = () => {
                     <Card className={classes.card}>
                         <CardActionArea>
                             <CardMedia className={classes.pic}>
-                                <img src="https://www.flaticon.com/svg/static/icons/svg/236/236832.svg" alt="profile pic" style={{height: 200, margin: '10 auto'}} />
+                                <img src={dp} alt="profile pic" style={{height: 200, margin: '10 auto', borderRadius: '50%'}} />
                             </CardMedia>
                             <CardContent>
                             <Typography gutterBottom variant="h5" component="h2">
