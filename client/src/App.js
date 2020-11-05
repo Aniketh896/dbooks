@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
+import { makeStyles } from '@material-ui/core'
 
 import EBookListing from './Components/EBookListing'
 import Navcomponent from './Components/Navcomponent'
 import Homepage from './Components/pages/Homepage'
 import { portis } from './drizzleOptions'
-import { makeStyles } from '@material-ui/core'
 import './App.css'
+import PublishBook from './Components/PublishBook'
 
 
 const ipfsClient = require('ipfs-http-client')
@@ -24,6 +26,11 @@ const App = props => {
 	const [reputation, setReputation] = useState()
 
 	useEffect(() => {
+		// const web3 = props.drizzle.web3
+		// web3.eth.getAccounts().then(accounts => {
+		// 	this.account = accounts[0]
+		// })
+
 		portis.onLogin((walletAddress, email, reputation) => {
 			setWalletAddress(walletAddress)
 			setEmail(email)
@@ -42,15 +49,30 @@ const App = props => {
 	}, [])
 
 	return (
-		<div>
+		<Router>
 			<div className={classes.navigation}>
 				<Navcomponent walletAddress={walletAddress} email={email} reputation={reputation} />
 			</div>
 			<div className='container' style={{ display: 'flex', flexDirection: 'column' }}>
-				<EBookListing {...props} />
-				<Homepage />
+				<Switch className='route-wrapper'>
+					<Route exact path='/'>
+						<Homepage {...props} />
+					</Route>
+					<Route exact path='/ebooks'>
+						<EBookListing {...props} />
+					</Route>
+					<Route exact path='/publish'>
+						<PublishBook {...props} />
+					</Route>
+					<Route exact path='/purchase'>
+						<EBookListing {...props} />
+					</Route>
+					<Route exact path='/clientLibrary'>
+						<EBookListing {...props} />
+					</Route>
+				</Switch>
 			</div>
-		</div>
+		</Router>
 	)
 }
 

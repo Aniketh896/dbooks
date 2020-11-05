@@ -5,6 +5,8 @@
 /client/node_modules
 /.pnp
 .pnp.js
+.vscode
+.secret
 
 # testing
 /coverage

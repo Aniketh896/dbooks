@@ -1,3 +1,4 @@
+const HDWalletProvider = require('truffle-hdwallet-provider')
 const path = require('path')
 
 const mnemonic =
