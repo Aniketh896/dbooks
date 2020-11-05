@@ -11,32 +11,25 @@ export const booksList = [
   },
   {
     id: 2,
-    author: "Abhishek",
-    title: "Savita BHabhi",
+    author: "Abhishek Singh",
+    title: "Ozymandias",
     date: "4th Nov, 2020",
-    genre: ["Horror"],
+    genre: ["Thriller"],
   },
   {
     id: 3,
-    author: "Aniketh Hotagi",
-    title: "The Theory of Everything",
-    date: "4th Nov, 2020",
-    genre: ["Horror", "Romance", "Drama"],
+    author: "Abdul Mateen",
+    title: "Manga Man",
+    date: "28th Oct, 2020",
+    genre: ["Action"],
   },
   {
     id: 4,
-    author: "Aniketh Hotagi",
-    title: "The Theory of Everything",
-    date: "4th Nov, 2020",
-    genre: ["Horror", "Romance"],
-  },
-  {
-    id: 5,
-    author: "Aniketh Hotagi",
-    title: "The Theory of Everything",
-    date: "4th Nov, 2020",
-    genre: ["Horror", "Romance"],
-  },
+    author: "Adarsh A Nair",
+    title: "C++ Programming",
+    date: "12th Nov, 2012",
+    genre: ["study"],
+  }
 ]; 
 
 /* const Tags = (props) => {
@@ -64,33 +57,32 @@ export const booksList = [
 } */
 
 
-
 const Card = (props) => {
 
   const {author, title, genre, date} = props;
 
   return (
           <article class="card">
-            <header class="card-header">
-              <p>{date}</p>
-              <h2>{title}</h2>
+            <header class="card-title">
+              <p>{ date }</p>
+              <h2>{ title }</h2>
             </header>
 
             <div class="card-author">
               <a class="author-avatar" href="#">
-                <img src="avatar.png" />
+                <img src="../dbooks-logo.svg" />
               </a>
               <svg class="half-circle" viewBox="0 0 106 57">
                 <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
               </svg>
 
-              <div class="author-name">
-                <div class="author-name-prefix">Author</div>
-                {author}
+              <div class="author">
+                <div class="author-heading">Author</div>
+                { author }
               </div>
             </div>
             <div class="tags">
-              <a href="">{ genre}</a>
+              <a href="#">{ genre }</a>
             </div>
           </article>
 
@@ -100,25 +92,14 @@ const Card = (props) => {
 
 const Book = () => {
   return (
-    <section className="book">
+
+    <div className="book">
       {booksList.map((book) => {
         return <Card key={book.id} {...book}></Card>;
       })}
-    </section>
+    </div>
+
   );
 };
-
-
-// Tried to create a Funtion to map array to the book
-
-/* function BookList() {
-  return (
-    <section className="booklist">
-      {booksList.map((book) => {
-        return <Card key={book.id} {...book}></Card>;
-      })}
-    </section>
-  );
-} */
 
 export default Book;

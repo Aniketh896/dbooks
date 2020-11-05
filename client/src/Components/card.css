@@ -3,7 +3,6 @@ body {
     margin: 0;
     background-color: #17141d;
     color: white;
-    font-family: 'DM Mono', monospace;
 }
 
 a {
@@ -38,11 +37,6 @@ a {
     position: relative;
 }
 
-.booklist {
-    display: flex;
-    padding: 3rem;
-    overflow-x: scroll;
-}
 
 .card-list {
     display: flex;
@@ -79,17 +73,17 @@ a {
 }
 
 
-.card-header {
+.card-title {
     margin-bottom: auto;
 }
 
-.card-header p {
+.card-title p {
     font-size: 14px;
     margin: 0 0 1rem;
     color: #7a7a8c;
 }
 
-.card-header h2 {
+.card-title h2 {
     font-size: 20px;
     margin: .25rem 0 auto;
     text-decoration: none;
@@ -99,7 +93,7 @@ a {
     cursor: pointer;
 }
 
-.card-header h2:hover {
+.card-title h2:hover {
     background: linear-gradient(90deg,#ff8a00,#e52e71);
     text-shadow: none;
     -webkit-text-fill-color: transparent;
@@ -132,12 +126,12 @@ a {
     margin: 16px 10px;
 }
 
-.author-name {
+.author {
     grid-area: auto;
     box-sizing: border-box;
 }
 
-.author-name-prefix {
+.author-heading {
     font-style: normal;
     font-weight: 700;
     color: #7a7a8c;
