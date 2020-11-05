@@ -7,18 +7,30 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Chip from '@material-ui/core/Chip';
 
 import Tabmenu from '../Tabmenu'
 
 const useStyles = makeStyles({
 
-//   root: {
-//     height: '100vh'
-//   },
+  root: {
+    marginTop: '63.99px',
+    overflow: 'hidden'
+  },
   content: {
-    marginTop:63.99,
+    overflow: 'auto',
     display: 'flex',
+    flexDirection:'column',
     height: '100vh'
+  },
+
+  page: {
+    display: 'flex'
+  },
+
+  token: {
+      marginLeft: 'auto',
+      marginRight: '50px',
   },
 
   user: {
@@ -50,9 +62,13 @@ const Profilepage = () => {
     const classes = useStyles();
 
     return (
-        <div >
+        <div className={classes.root}>
             <div className={classes.content}>
-                <div className={classes.user}>
+                <div className={classes.token}>
+                    <Chip label="Token" style={{marginTop: '20px'}} />
+                </div>
+                <div className={classes.page}>
+                    <div className={classes.user}>
                     <Card className={classes.card}>
                         <CardActionArea>
                             <CardMedia className={classes.pic}>
@@ -77,6 +93,8 @@ const Profilepage = () => {
                 <div className="tabs">
                     <Tabmenu />
                 </div>
+                </div>
+                
             </div>
             
         </div>

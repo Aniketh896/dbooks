@@ -97,6 +97,7 @@ const useStyles = makeStyles(theme => ({
 		position: 'fixed',
 		width: '100%',
 		height: 63.99,
+		zIndex: theme.zIndex.drawer + 1,
 	},
 }))
 

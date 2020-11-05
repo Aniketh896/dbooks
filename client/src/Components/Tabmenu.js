@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     maxWidth: 480,
+    minWidth: 480,
     backgroundColor: theme.palette.background.paper,
     marginTop: 20
   },
@@ -71,7 +72,6 @@ export default function Tabmenu() {
         >
           <Tab label="Item One" {...a11yProps(0)} />
           <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -79,9 +79,6 @@ export default function Tabmenu() {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <p style={{color:'black'}}>Item Two</p> 
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <p style={{color:'black'}}>Item Three</p> 
       </TabPanel>
     </div>
   );
