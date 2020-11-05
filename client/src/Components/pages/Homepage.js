@@ -7,10 +7,9 @@ import { makeStyles } from '@material-ui/core';
 
 
 const useStyles = makeStyles({
-    container: {
-  height: '100vh',
-},
-
+  container: {
+    height: '100vh',
+  },
   content: {
   display: 'flex',
   paddingTop: '63.99px',
@@ -45,27 +44,17 @@ bookcard: {
   marginRight: 'auto',
   paddingBottom: 20,
 },
-
-navigation: {
-  marginTop: 0,
-  marginBottom: 'auto',
-  position: 'fixed',
-  width: '100%',
-  height: 63.99,
-}
 })
 
 
 
 const Homepage = () => {
 
+
     const classes = useStyles();
 
     return (
         <div>
-            <div className={classes.navigation}>
-                <Navcomponent />
-            </div>
             <div className={classes.container} style={{display:"flex", flexDirection: "column"}}>
                 <div className={classes.content}>
                     <div className={classes.leftbar}>
