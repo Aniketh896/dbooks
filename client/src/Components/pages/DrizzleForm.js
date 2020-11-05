@@ -1,10 +1,14 @@
 import React from 'react'
 import { newContextComponents } from '@drizzle/react-components'
 import { DrizzleContext } from '@drizzle/react-plugin'
+import Container from '@material-ui/core/Container';
+import { makeStyles } from '@material-ui/core'
 
 const { AccountData, ContractData, ContractForm } = newContextComponents
 
-const FormPage = ({ drizzle, drizzleState, initialized, method, children }) => {
+const DrizzleForm = ({ drizzle, drizzleState, initialized, method, children }) => {
+	const classes = useStyles()
+
 	if (!initialized) {
 		return 'Loading...'
 	}
@@ -12,7 +16,7 @@ const FormPage = ({ drizzle, drizzleState, initialized, method, children }) => {
 	const { accounts } = drizzleState
 
 	return (
-		<div className='uploadForm'>
+		<Container maxWidth="sm" className={classes.formContainer}>
 			{children}
 
 			<ContractForm
@@ -33,7 +37,7 @@ const FormPage = ({ drizzle, drizzleState, initialized, method, children }) => {
 								placeholder={input.name}
 								onChange={handleInputChange}
 							/>
-						))}
+						))} 
 						<button
 							key='submit'
 							type='button'
@@ -44,8 +48,15 @@ const FormPage = ({ drizzle, drizzleState, initialized, method, children }) => {
 					</form>
 				)}
 			/>
-		</div>
+		</Container>
 	)
 }
 
-export default FormPage
+export default DrizzleForm
+
+const useStyles = makeStyles(theme => ({
+	formContainer: {
+		
+	}
+}))
+

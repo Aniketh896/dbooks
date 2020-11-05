@@ -37,7 +37,11 @@ export default function EBookListing({ drizzle, drizzleState, initialized }) {
 			.call()
 		console.log('[DEBUG] res: ', res)
 
-		return await EBContractWeb3.getPastEvents('publishedBookEvent', {})
+		return await EBContractWeb3.getPastEvents('publishedBookEvent', {
+			filter: {},
+			fromBlock: 0,
+			toBLock: 'latest',
+		})
 	}
 
 	const setupBookListing = async () => {
