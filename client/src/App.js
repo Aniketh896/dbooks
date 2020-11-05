@@ -42,9 +42,9 @@ const App = props => {
 		})
 
 		portis.onLogout(() => {
-			setWalletAddress('')
-			setEmail('')
-			setReputation('')
+			setWalletAddress("")
+			setEmail("")
+			setReputation("")
 
 			console.log('User logged out')
 		})
@@ -58,24 +58,32 @@ const App = props => {
 			</div>
 			<div className='container' style={{ display: 'flex', flexDirection: 'column' }}>
 				<Switch className='route-wrapper'>
-					<Route exact path='/'>
-						<Homepage {...props} />
-					</Route>
-					<Route exact path='/ebooks'>
-						<EBookListing {...props} />
-					</Route>
-					<Route exact path='/user'>
-						<Profilepage {...props} />
-					</Route>
-					<Route exact path='/publish'>
-						<PublishBook {...props} />
-					</Route>
-					<Route exact path='/purchase'>
-						<EBookListing {...props} />
-					</Route>
-					<Route exact path='/clientLibrary'>
-						<EBookListing {...props} />
-					</Route>
+					{walletAddress ? (
+						<>
+							<Route exact path='/'>
+								<Homepage {...props} />
+							</Route>
+							<Route exact path='/ebooks'>
+								<EBookListing {...props} />
+							</Route>
+							<Route exact path='/user'>
+								<Profilepage {...props} />
+							</Route>
+							<Route exact path='/publish'>
+								<PublishBook {...props} />
+							</Route>
+							<Route exact path='/purchase'>
+								<EBookListing {...props} />
+							</Route>
+							<Route exact path='/clientLibrary'>
+								<EBookListing {...props} />
+							</Route>
+						</>) : (
+							<div>
+
+							</div>
+						)}
+					
 				</Switch>
 			</div>
 			<Modal
