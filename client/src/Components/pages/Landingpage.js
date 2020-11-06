@@ -89,7 +89,9 @@ const Landingpage = (props) => {
                                 ]}/>
 
                             </p>
-                            <p className="para" style={{marginTop: '50px', maxWidth:'1000px'}}>Our site helps the authors to publish and reach out people in safest way. We prevent piracy and provide full credit to the authors who have worked hard on their books</p>
+                            <p className="para" style={{marginTop: '50px', maxWidth:'1000px'}}>A completely Decentralized marketplace for selling and buying of ebooks. Anyone can easily upload their ebooks on the platform, which
+                                    can then be purchased by others. Our in-built eReader restricts external
+                                    downloads, so it curbs piracy by making sure copyrighted books can’t be shared or circulated illegally.</p>
                         </div>
                         <div className="ourteam">
                             <h2>Our Development Team</h2>
