@@ -41,7 +41,7 @@ h3: {
 
 bookcard: {
   display: 'flex',
-  height: 250,
+  height: 350,
   marginLeft: 'auto',
   marginRight: 'auto',
   paddingBottom: 20,

@@ -7,6 +7,9 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
+
+import Accordiancomp, {Accordiancomp2} from './Accordiancomp'
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -43,8 +46,8 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    maxWidth: 480,
-    minWidth: 480,
+    maxWidth: 600,
+    minWidth: 600,
     backgroundColor: theme.palette.background.paper,
     marginTop: 20
   },
@@ -70,15 +73,15 @@ export default function Tabmenu() {
           scrollButtons="auto"
           aria-label="scrollable auto tabs example"
         >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
+          <Tab label="Published Books" {...a11yProps(0)} />
+          <Tab label="Purchased Books" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <p style={{color:'black'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequatur aperiam quos earum exercitationem? Consequatur eos dignissimos, consectetur unde corrupti maxime necessitatibus est facilis omnis reiciendis ipsa. Voluptatibus, harum quis.s</p> 
+        <Accordiancomp />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <p style={{color:'black'}}>Item Two</p> 
+        <Accordiancomp2 />
       </TabPanel>
     </div>
   );

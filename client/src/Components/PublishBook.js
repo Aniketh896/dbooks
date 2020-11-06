@@ -108,7 +108,7 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 	}
 
 	return (
-		<Container maxWidth='lg' className={classes.container}>
+		<Container maxWidth='lg' className={classes.container}  style={{backgroundColor: 'white'}}>
 			<div style={{ marginBottom: 20 }}>
 				<AccountData
 					drizzle={drizzle}
