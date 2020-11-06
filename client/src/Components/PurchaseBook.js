@@ -107,7 +107,7 @@ export default function PurchaseBook({
 
 	return (
 		<Container maxWidth='sm' className={classes.container}>
-			<div style={{ marginBottom: 20 }}>
+			<div style={{ marginBottom: 20, backgroundColor:'white', padding: 10, borderRadius: 5}}>
 				<AccountData
 					drizzle={drizzle}
 					drizzleState={drizzleState}

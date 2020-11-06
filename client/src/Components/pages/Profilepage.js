@@ -77,7 +77,7 @@ const Profilepage = () => {
                             </CardMedia>
                             <CardContent>
                             <Typography gutterBottom variant="h5" component="h2">
-                                UserName
+                                UserHashNumber
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
                                 <strong>Bio: </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia dolore omnis reprehenderit consequatur illo, numquam eius tenetur perferendis nulla cum voluptate maxime
