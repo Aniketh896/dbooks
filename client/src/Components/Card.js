@@ -20,10 +20,10 @@ const Card = props => {
 				</svg>
 
 				<div className='author'>
-					<div className='author-heading'>Author</div>
-					{authorAddress.slice(0, 4) +
-						'...' +
-						authorAddress.slice(authorAddress.length - 4, authorAddress.length)}
+					<div className='author-heading'>
+						Author
+					</div>
+					{/* {authorAddress.slice(0, 4) + '...' + authorAddress.slice(authorAddress.length - 4, authorAddress.length)} */}
 				</div>
 			</div>
 			<div className='tags'>

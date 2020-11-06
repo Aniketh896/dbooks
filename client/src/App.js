@@ -101,7 +101,6 @@ const App = props => {
 							<Landingpage />
 						</div>
 					)}
-					)}
 				</Switch>
 			</div>
 			<Modal

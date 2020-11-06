@@ -6,8 +6,6 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
 
-import dp from '../adarsh.png'
-
 import { portis } from '../drizzleOptions'
 
 const useStyles = makeStyles(theme => ({
@@ -36,7 +34,7 @@ export default function Navcomponent({ walletAddress, email, reputation }) {
 					{walletAddress && (
 						<>
 							<img
-								src={dp}
+								src="https://www.flaticon.com/svg/static/icons/svg/236/236832.svg"
 								alt='userpic'
 								style={{ width: '40px', borderRadius: '50%' }}
 							/>
