@@ -14,6 +14,7 @@ import './App.css'
 import PublishBook from './Components/PublishBook'
 import Profilepage from './Components/pages/Profilepage'
 import ReactReader from './Components/pages/ReactReader'
+import Landingpage from './Components/pages/Landingpage'
 
 
 const App = props => {
@@ -55,13 +56,14 @@ const App = props => {
 	return (
 		<Router>
 			<CssBaseline />
-			<div className={classes.navigation}>
-				<Navcomponent walletAddress={walletAddress} email={email} reputation={reputation} />
-			</div>
+			
 			<div className='container' style={{ display: 'flex', flexDirection: 'column' }}>
 				<Switch className='route-wrapper'>
 					{walletAddress ? (
 						<>
+							<div className={classes.navigation}>
+								<Navcomponent walletAddress={walletAddress} email={email} reputation={reputation} />
+							</div>
 							<Route exact path='/'>
 								<Homepage {...props} />
 							</Route>
@@ -85,7 +87,7 @@ const App = props => {
 							</Route>
 						</>) : (
 							<div>
-
+								<Landingpage />
 							</div>
 						)}
 					
