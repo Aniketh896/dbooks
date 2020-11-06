@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { newContextComponents } from '@drizzle/react-components'
 import Button from '@material-ui/core/Button'
 import CloudUploadIcon from '@material-ui/icons/CloudUpload'
@@ -42,6 +42,22 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 	const [buffer, setBuffer] = useState('')
 	const [uploadOpen, setUploadOpen] = useState(false)
 	const [publishOpen, setPublishOpen] = useState(false)
+
+	const setBalance = async () => {
+		const balance = await drizzle.contracts.DBookToken.methods
+			.balanceOf(drizzleState.accounts[0])
+			.call()
+
+		// console.log('[DEBUG] balance: ', balance)
+		setDbktBalance(balance)
+	}
+
+	useEffect(() => {
+		if (initialized) {
+			setBalance()
+		}
+	}, [initialized])
+
 
 	const handleCloseUpload = (event, reason) => {
 		if (reason === 'clickaway') {

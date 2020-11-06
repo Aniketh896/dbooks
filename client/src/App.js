@@ -83,9 +83,9 @@ const App = props => {
 							<Route exact path='/purchase'>
 								<PurchaseBook
 									{...props}
-									title={'The book title'}
+									title={'title'}
 									author='0x6A3320b1dd171bBf866115B5d515e1e618481807'
-									price={10}
+									price={20}
 									ipfsHash='QmTWz8CyQ1n3TBnrLkdZh3vZjDqU1eHK5LwXCWF88YGkCy'
 								/>
 							</Route>

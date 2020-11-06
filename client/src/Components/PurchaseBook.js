@@ -108,15 +108,6 @@ export default function PurchaseBook({
 	return (
 		<Container maxWidth='sm' className={classes.container}>
 			<div style={{ marginBottom: 20 }}>
-				<DrizzleForm
-					ipfsHash={ipfsHash}
-					price={price}
-					method='purchaseBook'
-					drizzle={drizzle}
-					drizzleState={drizzleState}
-					initialized={initialized}
-				/>
-
 				<AccountData
 					drizzle={drizzle}
 					drizzleState={drizzleState}
