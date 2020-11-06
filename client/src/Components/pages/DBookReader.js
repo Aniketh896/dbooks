@@ -36,7 +36,7 @@ export default function DBookReader({ url, title }) {
 	return (
 		<div style={{ position: 'relative', height: '100%', paddingTop: 64 }}>
 			<ReactReader
-				url={url}
+				url={url || '/alice.epub'}
 				title={title}
 				location={location}
 				locationChanged={setLocation}

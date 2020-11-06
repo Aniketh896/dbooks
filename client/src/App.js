@@ -6,7 +6,6 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 // import Homepage from './Components/pages/Homepage'
 import Profilepage from './Components/pages/Profilepage'
 import DBookReader from './Components/pages/DBookReader'
-import ReactReader from './Components/pages/ReactReader'
 
 import EBookListing from './Components/EBookListing'
 import Navcomponent from './Components/Navcomponent'
@@ -91,14 +90,6 @@ const App = props => {
 							</Route>
 							<Route exact path='/DBookReader'>
 								<DBookReader {...props} />
-							</Route>
-							<Route exact path='/ReactReader'>
-								<ReactReader
-									url={'/alice.epub'}
-									title={'Alice in wonderland'}
-									location={'epubcfi(/6/2[cover]!/6)'}
-									locationChanged={epubcifi => console.log(epubcifi)}
-								/>
 							</Route>
 						</>
 					) : (
