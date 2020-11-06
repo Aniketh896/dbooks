@@ -7,6 +7,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import Profilepage from './Components/pages/Profilepage'
 import ReactReader from './Components/pages/ReactReader'
 
+
 import EBookListing from './Components/EBookListing'
 import Navcomponent from './Components/Navcomponent'
 import LoadingImg from './Components/Loading'
@@ -93,7 +94,12 @@ const App = props => {
 								<EBookListing {...props} />
 							</Route>
 							<Route exact path='/ReactReader'>
-								<ReactReader {...props} />
+								<ReactReader 
+									 url={"/alice.epub"}
+									 title={"Alice in wonderland"}
+									 location={"epubcfi(/6/2[cover]!/6)"}
+									 locationChanged={epubcifi => console.log(epubcifi)}
+								/>
 							</Route>
 						</>
 					) : (
