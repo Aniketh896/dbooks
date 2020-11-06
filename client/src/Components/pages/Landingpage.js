@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Button from '@material-ui/core/Button'
 import { portis } from '../../drizzleOptions'
 
+import Typical from "react-typical"
+
 import EmailIcon from '@material-ui/icons/Email';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -73,6 +75,19 @@ const Landingpage = (props) => {
                         </div>
                         <div style={{paddingTop: '100px', height:'100%'}}>
                             <img className="image" src={logo} alt="logo"/>
+                            <p style={{padding: "5rem"}}>
+                                <Typical
+                                className = "para" 
+                                loop = {Infinity}
+                                wrapper = "span"
+                                steps = {[
+                                    "Decentralized" ,1500,
+                                    "Immutable" ,1500,
+                                    "Secure" ,1500,
+                                    "Easy to Use" ,1500
+                                ]}/>
+
+                            </p>
                             <p className="para" style={{marginTop: '50px', maxWidth:'1000px'}}>Our site helps the authors to publish and reach out people in safest way. We prevent piracy and provide full credit to the authors who have worked hard on their books</p>
                         </div>
                         <div className="ourteam">
