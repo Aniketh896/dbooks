@@ -6,9 +6,9 @@ const Member = (props) => {
 
     return (
         <div className="member">
-            <img src={img} alt="Member" style={{width: '120px', borderRadius:'50%'}}/>
-            <h3 style={{textAlign:'center'}}>{name}</h3>
-            <h4 style={{textAlign:'center'}}>{post}</h4>
+            <img src={img} alt="Member" style={{width: '200px', borderRadius:'50%'}}/>
+            <h2 style={{textAlign:'center'}}>{name}</h2>
+            <h3 style={{textAlign:'center'}}>{post}</h3>
         </div>
     )
 }

@@ -14,6 +14,8 @@ import DevTeam from '../DevTeam'
 
 
 import logo from '../../dbooks-logo.svg'
+import portislogo from '../../portis_logo.svg'
+import maticlogo from '../../matic-logo-white.svg'
 import './Landingpage.css'
 
 
@@ -73,7 +75,7 @@ const Landingpage = (props) => {
                                 <p style={{fontSize: '20px'}}>Login</p>
                             </Button>
                         </div>
-                        <div style={{paddingTop: '100px', height:'100%'}}>
+                        <div style={{paddingTop: '100px', height:'70%'}}>
                             <img className="image" src={logo} alt="logo"/>
                             <p style={{paddingTop: "5rem"}}>
                                 <Typical
@@ -82,20 +84,20 @@ const Landingpage = (props) => {
                                 wrapper = "span"
                                 
                                 steps = {[
-                                    "Decentralized" ,1000,
-                                    "Immutable" ,1000,
-                                    "Secure" ,1000,
-                                    "Easy to Use" ,1000
+                                    "Decentralized" ,3000,
+                                    "Immutable" ,3000,
+                                    "Secure" ,3000,
+                                    "Easy to Use" ,3000
                                 ]}/>
 
                             </p>
-                            <p className="para" style={{marginTop: '50px', maxWidth:'1000px'}}>A completely Decentralized marketplace for selling and buying of ebooks. Anyone can easily upload their ebooks on the platform, which
-                                    can then be purchased by others. Our in-built eReader restricts external
+                            <p className="para" style={{marginTop: '50px', maxWidth:'1000px'}}>A completely <strong style={{color:'yellow'}}>Decentralized</strong> marketplace for selling and buying of ebooks. Anyone can easily upload their ebooks on the platform, which
+                                    can then be purchased by others. Our in-built <strong style={{color:'yellow'}}>eReader</strong> restricts external
                                     downloads, so it curbs piracy by making sure copyrighted books can’t be shared or circulated illegally.</p>
                         </div>
                         <div className="ourteam">
-                            <h2>Our Development Team</h2>
-                            <div style={{marginTop:'100px'}}>
+                            <p>Our Development Team</p>
+                            <div style={{marginTop:'70px'}}>
                                 <DevTeam />
                             </div>
                         </div>
@@ -110,6 +112,9 @@ const Landingpage = (props) => {
                             </li>
                             <li>
                                 <a href="#"><GitHubIcon fontSize="large"/><span>Github</span></a>
+                            </li>
+                            <li style={{marginLeft:'auto', marginBottom:'auto', display:'flex'}}>
+                                <span>Powered by - </span><span><a href="#" style={{marginLeft:'40px'}}><img src={portislogo} alt="portis" style={{width:'100px'}}/></a></span><span><a href="#"><img src={maticlogo} alt="matic" style={{width:'150px'}}/></a></span> 
                             </li>
                         </ul>
                         
