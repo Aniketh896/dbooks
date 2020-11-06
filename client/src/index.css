@@ -1,13 +1,43 @@
-body {
+
+html,
+body,
+#root,
+.App  {
   margin: 0;
+  height: 100%;
+	width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #2e3338;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #202125;
+	border-radius: 10px;
+}
+/* 
+input:focus {
+	outline: none;
+} */
