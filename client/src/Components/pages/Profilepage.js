@@ -84,10 +84,7 @@ const Profilepage = props => {
 										UserName
 									</Typography>
 									<Typography variant='body2' color='textSecondary' component='p'>
-										<strong>Bio: </strong>Lorem ipsum dolor sit amet,
-										consectetur adipisicing elit. Voluptatibus quia dolore omnis
-										reprehenderit consequatur illo, numquam eius tenetur
-										perferendis nulla cum voluptate maxime
+										<strong>Bio: </strong>I am an author in making and trying my chances in the writer's world. I like writing suspense stories and drama. 
 									</Typography>
 								</CardContent>
 							</CardActionArea>
@@ -98,7 +95,7 @@ const Profilepage = props => {
 							</CardActions>
 						</Card>
 					</div>
-					<div className='tabs' style={{ width: '100%' }}>
+					<div className='tabs' style={{ width: '100%', marginRight: '20px'}}>
 						<Tabmenu {...props} />
 					</div>
 				</div>
