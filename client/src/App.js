@@ -5,7 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 
 import Homepage from './Components/pages/Homepage'
 import Profilepage from './Components/pages/Profilepage'
-import ReactReader from './Components/pages/ReactReader'
+import DBookReader from './Components/pages/DBookReader'
 
 import EBookListing from './Components/EBookListing'
 import Navcomponent from './Components/Navcomponent'
@@ -57,7 +57,9 @@ const App = props => {
 		<Router>
 			<CssBaseline />
 
-			<div className='container' style={{ display: 'flex', flexDirection: 'column', backgroundColor: '#17141d' }}>
+			<div
+				className='container'
+				style={{ display: 'flex', flexDirection: 'column', backgroundColor: '#17141d' }}>
 				<Switch className='route-wrapper'>
 					{walletAddress ? (
 						<>
@@ -86,8 +88,8 @@ const App = props => {
 							<Route exact path='/clientLibrary'>
 								<EBookListing {...props} />
 							</Route>
-							<Route exact path='/ReactReader'>
-								<ReactReader {...props} />
+							<Route exact path='/DBookReader'>
+								<DBookReader {...props} />
 							</Route>
 						</>
 					) : (
