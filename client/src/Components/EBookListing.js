@@ -3,8 +3,10 @@ import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
-import options from '../drizzleOptions'
-import { Card } from './Card'
+
+import Card from './Card'
+import './card.css'
+import { Container, Typography } from '@material-ui/core'
 
 function Alert(props) {
 	return <MuiAlert elevation={6} variant='filled' {...props} />
@@ -52,7 +54,7 @@ export default function EBookListing({ drizzle, drizzleState, initialized }) {
 
 		events.forEach(log => {
 			console.log('[DEBUG] log: ', log)
-			const authorAddress = log.returnValues[0]	
+			const authorAddress = log.returnValues[0]
 			const ipfsHash = log.returnValues[1]
 			const title = log.returnValues[2]
 			const price = log.returnValues[3]
@@ -81,25 +83,34 @@ export default function EBookListing({ drizzle, drizzleState, initialized }) {
 	}
 
 	return (
-		<div>
-			{ebookList.map(ebook => (
-				<Card key={ebook.ipfsHash} {...ebook} />
-			))}
-			<Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-				<Alert onClose={handleClose} severity='success'>
-					This is a success message!
-				</Alert>
-			</Snackbar>
-			<Button onClick={setupBookListing}>Reload</Button>
-		</div>
+		<Container maxWidth='lg' className={classes.container}>
+			<Typography variant='h3'>Select a book</Typography>
+
+			<div className={classes.wrapper}>
+				<div className='book'>
+					{ebookList.map(ebook => (
+						<Card key={ebook.ipfsHash} {...ebook} />
+					))}
+					<Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+						<Alert onClose={handleClose} severity='success'>
+							This is a success message!
+						</Alert>
+					</Snackbar>
+				</div>
+			</div>
+		</Container>
 	)
 }
 
 const useStyles = makeStyles(theme => ({
-	root: {
+	wrapper: {
 		width: '100%',
-		'& > * + *': {
-			marginTop: theme.spacing(2),
-		},
+		height: '100%',
+	},
+	container: {
+		paddingTop: 64,
+		display: 'grid',
+		width: '100%',
+		height: '100%',
 	},
 }))

@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
 
-import dp from '../adarsh.png';
+import dp from '../adarsh.png'
 
 import { portis } from '../drizzleOptions'
 
@@ -14,7 +14,6 @@ const useStyles = makeStyles(theme => ({
 	root: {
 		flexGrow: 1,
 		zIndex: 200,
-		
 	},
 	menuButton: {
 		marginRight: theme.spacing(2),
@@ -24,7 +23,7 @@ const useStyles = makeStyles(theme => ({
 	},
 	links: {
 		color: 'white',
-	}
+	},
 }))
 
 export default function Navcomponent({ walletAddress, email, reputation }) {
@@ -39,7 +38,7 @@ export default function Navcomponent({ walletAddress, email, reputation }) {
 							<img
 								src={dp}
 								alt='userpic'
-								style={{ width: '40px', borderRadius: '50%'}}
+								style={{ width: '40px', borderRadius: '50%' }}
 							/>
 							<Typography
 								variant='h6'
@@ -54,7 +53,6 @@ export default function Navcomponent({ walletAddress, email, reputation }) {
 							</Typography>
 						</>
 					)}
-					
 
 					{walletAddress ? (
 						<>
@@ -70,28 +68,38 @@ export default function Navcomponent({ walletAddress, email, reputation }) {
 								</Button>
 							</Link>
 
+							<Link to='/ebooks' className={classes.links}>
+								<Button color='inherit' style={{ marginRight: '10px' }}>
+									Store
+								</Button>
+							</Link>
+
 							<Link to='/publish' className={classes.links}>
 								<Button color='inherit' style={{ marginRight: '10px' }}>
 									Publish
 								</Button>
 							</Link>
 
-           				 <Button
-							style={({ color: 'inherit' }, { backgroundColor: '#E7CAEC' })}
-							onClick={e => portis.logout()}>
-							Log out
-						</Button>
-            
-            </>
+							<Link to='/purchase' className={classes.links}>
+								<Button color='inherit' style={{ marginRight: '10px' }}>
+									purchase
+								</Button>
+							</Link>
+
+							<Button
+								style={({ color: 'inherit' }, { backgroundColor: '#E7CAEC' })}
+								onClick={e => portis.logout()}>
+								Log out
+							</Button>
+						</>
 					) : (
-            <div style={{marginLeft: 'auto'}}>
-              <Button
-							style={({ color: 'inherit' }, { backgroundColor: '#E7CAEC' })}
-							onClick={e => portis.showPortis()}>
-							Login
-						</Button>
-            </div>
-						
+						<div style={{ marginLeft: 'auto' }}>
+							<Button
+								style={({ color: 'inherit' }, { backgroundColor: '#E7CAEC' })}
+								onClick={e => portis.showPortis()}>
+								Login
+							</Button>
+						</div>
 					)}
 				</Toolbar>
 			</AppBar>

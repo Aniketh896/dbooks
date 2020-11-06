@@ -7,7 +7,7 @@ import { Height } from '@material-ui/icons'
 import Paper from '@material-ui/core/Paper'
 const { AccountData, ContractData, ContractForm } = newContextComponents
 
-const DrizzleForm = ({ drizzle, drizzleState, initialized, method, children, ipfsHash, price, setPublishOpen }) => {
+const DrizzleForm = ({ drizzle, drizzleState, initialized, method, children, ipfsHash, price }) => {
 	const classes = useStyles()
 
 	if (!initialized) {
@@ -49,7 +49,7 @@ const DrizzleForm = ({ drizzle, drizzleState, initialized, method, children, ipf
 								/>
 							)
 						})}
-						
+
 						<Button
 							key='submit'
 							type='button'
@@ -68,11 +68,6 @@ const DrizzleForm = ({ drizzle, drizzleState, initialized, method, children, ipf
 export default DrizzleForm
 
 const useStyles = makeStyles(theme => ({
-	formContainer: {
-		width: '100%',
-		height: '100%',
-		paddingTop: '10%',
-	},
 	formBody: {
 		marginTop: '20px',
 		marginBottom: '20px',

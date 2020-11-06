@@ -3,19 +3,19 @@ import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
 import { makeStyles, Modal } from '@material-ui/core'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
-import EBookListing from './Components/EBookListing'
-import Navcomponent from './Components/Navcomponent'
 import Homepage from './Components/pages/Homepage'
-import { portis } from './drizzleOptions'
-
-import LoadingImg from './Components/Loading'
-
-import './App.css'
-import PublishBook from './Components/PublishBook'
 import Profilepage from './Components/pages/Profilepage'
 import ReactReader from './Components/pages/ReactReader'
-import Landingpage from './Components/pages/Landingpage'
 
+import EBookListing from './Components/EBookListing'
+import Navcomponent from './Components/Navcomponent'
+import LoadingImg from './Components/Loading'
+import PublishBook from './Components/PublishBook'
+import Landingpage from './Components/pages/Landingpage'
+import PurchaseBook from './Components/PurchaseBook'
+
+import { portis } from './drizzleOptions'
+import './App.css'
 
 const App = props => {
 	const classes = useStyles()
@@ -45,9 +45,9 @@ const App = props => {
 		})
 
 		portis.onLogout(() => {
-			setWalletAddress("")
-			setEmail("")
-			setReputation("")
+			setWalletAddress('')
+			setEmail('')
+			setReputation('')
 
 			console.log('User logged out')
 		})
@@ -56,13 +56,17 @@ const App = props => {
 	return (
 		<Router>
 			<CssBaseline />
-			
+
 			<div className='container' style={{ display: 'flex', flexDirection: 'column' }}>
 				<Switch className='route-wrapper'>
 					{walletAddress ? (
 						<>
 							<div className={classes.navigation}>
-								<Navcomponent walletAddress={walletAddress} email={email} reputation={reputation} />
+								<Navcomponent
+									walletAddress={walletAddress}
+									email={email}
+									reputation={reputation}
+								/>
 							</div>
 							<Route exact path='/'>
 								<Homepage {...props} />
@@ -77,7 +81,13 @@ const App = props => {
 								<PublishBook {...props} />
 							</Route>
 							<Route exact path='/purchase'>
-								<EBookListing {...props} />
+								<PurchaseBook
+									{...props}
+									title={'The book title'}
+									author='0x6A3320b1dd171bBf866115B5d515e1e618481807'
+									price={10}
+									ipfsHash='QmTWz8CyQ1n3TBnrLkdZh3vZjDqU1eHK5LwXCWF88YGkCy'
+								/>
 							</Route>
 							<Route exact path='/clientLibrary'>
 								<EBookListing {...props} />
@@ -85,12 +95,13 @@ const App = props => {
 							<Route exact path='/ReactReader'>
 								<ReactReader {...props} />
 							</Route>
-						</>) : (
-							<div>
-								<Landingpage />
-							</div>
-						)}
-					
+						</>
+					) : (
+						<div>
+							<Landingpage />
+						</div>
+					)}
+					)}
 				</Switch>
 			</div>
 			<Modal

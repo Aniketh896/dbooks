@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { newContextComponents } from '@drizzle/react-components'
 import Button from '@material-ui/core/Button'
 import CloudUploadIcon from '@material-ui/icons/CloudUpload'
 import Snackbar from '@material-ui/core/Snackbar'
 import MuiAlert from '@material-ui/lab/Alert'
+import { useDropzone } from 'react-dropzone'
 
 import DrizzleForm from './pages/DrizzleForm'
 import ipfs from '../ipfs'
@@ -18,9 +19,26 @@ const { AccountData, ContractData, ContractForm } = newContextComponents
 export default function PublishBook({ drizzle, drizzleState, initialized }) {
 	const classes = useStyles()
 
+	// const onDrop = useCallback(acceptedFiles => {
+	// 	console.log(acceptedFiles)
+	// 	setCover(acceptedFiles[0])
+
+	// 	const reader = new FileReader()
+
+	// 	reader.onabort = () => console.log('file reading was aborted')
+	// 	reader.onerror = () => console.log('file reading has failed')
+	// 	reader.onload = () => {
+	// 		const binaryStr = reader.result
+	// 		ipfs.files.write(acceptedFiles[0].name, binaryStr)
+	// 	}
+	// 	reader.readAsArrayBuffer(file)
+	// }, [])
+	// const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
+
 	const [dbktBalance, setDbktBalance] = useState(0)
 	const [epubFile, setEpubFile] = useState()
 	const [ipfsHash, setIpfsHash] = useState()
+	const [cover, setCover] = useState()
 	const [buffer, setBuffer] = useState('')
 	const [uploadOpen, setUploadOpen] = useState(false)
 	const [publishOpen, setPublishOpen] = useState(false)
@@ -101,17 +119,37 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 			<Divider />
 
 			<div className={classes.formContainer}>
-				<Typography variant='h2' style={{ fontWeight: 700 }}>
-					Publish your book
-				</Typography>
-				<DrizzleForm
-					ipfsHash={ipfsHash}
-					method='publishBook'
-					drizzle={drizzle}
-					drizzleState={drizzleState}
-					initialized={initialized}
-					setPublishOpen={setPublishOpen}
-				/>
+				<div>
+					<Typography variant='h2' style={{ fontWeight: 700 }}>
+						Publish your book
+					</Typography>
+					<DrizzleForm
+						ipfsHash={ipfsHash}
+						method='publishBook'
+						drizzle={drizzle}
+						drizzleState={drizzleState}
+						initialized={initialized}
+						setPublishOpen={setPublishOpen}
+					/>
+				</div>
+												{/* 
+				<div {...getRootProps()}>
+					<input {...getInputProps()} accept='.jpg, .jpeg, .png' />
+					{isDragActive ? (
+						<p>Drop the cover here ...</p>
+					) : (
+						<div
+							style={{
+								width: 400,
+								height: 200,
+								border: '1px dashed blue',
+								margin: 'auto',
+							}}>
+							<img src={cover.name} />
+							Select the cover
+						</div>
+					)}
+				</div> */}
 			</div>
 
 			<Divider />
@@ -147,7 +185,7 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 
 				<Typography variant='h6'>selected filename: {epubFile}</Typography>
 			</div>
-			
+
 			<Divider />
 
 			<div className={classes.root}>
@@ -167,12 +205,14 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 }
 
 const useStyles = makeStyles(theme => ({
-	formContainer: {},
+	formContainer: {
+		display: 'grid',
+		gridTemplateColumns: '1fr 1fr',
+	},
 	container: {
 		// backgroundColor: '#17141d',
 		paddingTop: '10%',
 		height: '100%',
-		width: '100%',
 		color: '#141414',
 	},
 	fileForm: {
