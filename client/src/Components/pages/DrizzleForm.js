@@ -28,12 +28,6 @@ const DrizzleForm = ({ drizzle, drizzleState, initialized, method, children, ipf
 				render={({ inputs, inputTypes, state, handleInputChange, handleSubmit }) => (
 					<form className={classes.formBody} onSubmit={handleSubmit}>
 						{inputs.map((input, index) => {
-							let value = input.name === '_source' ? ipfsHash : state[input.name]
-
-							if (method === 'purchaseBook' && input.name === '_price') {
-								value = price
-							}
-
 							return (
 								<TextField
 									variant='outlined'
@@ -43,7 +37,7 @@ const DrizzleForm = ({ drizzle, drizzleState, initialized, method, children, ipf
 									key={input.name}
 									type={inputTypes[index]}
 									name={input.name}
-									value={value}
+									value={state[input.name]}
 									placeholder={input.name}
 									onChange={handleInputChange}
 								/>

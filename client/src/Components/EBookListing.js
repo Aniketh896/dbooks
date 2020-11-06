@@ -34,10 +34,10 @@ export default function EBookListing({ drizzle, drizzleState, initialized }) {
 
 		console.log('[DEBUG] EBContractWeb3: ', EBContractWeb3)
 
-		const res = await EBContractWeb3.methods
-			.ebookSource('0x6A3320b1dd171bBf866115B5d515e1e618481807', 0)
-			.call()
-		console.log('[DEBUG] res: ', res)
+		// const res = await EBContractWeb3.methods
+		// 	.ebookSource('0x6A3320b1dd171bBf866115B5d515e1e618481807', 0)
+		// 	.call()
+		// console.log('[DEBUG] res: ', res)
 
 		return await EBContractWeb3.getPastEvents('publishedBookEvent', {
 			filter: {},
@@ -53,7 +53,7 @@ export default function EBookListing({ drizzle, drizzleState, initialized }) {
 		let newEBookList = []
 
 		events.forEach(log => {
-			console.log('[DEBUG] log: ', log)
+			// console.log('[DEBUG] log: ', log)
 			const authorAddress = log.returnValues[0]
 			const ipfsHash = log.returnValues[1]
 			const title = log.returnValues[2]
@@ -89,7 +89,13 @@ export default function EBookListing({ drizzle, drizzleState, initialized }) {
 			<div className={classes.wrapper}>
 				<div className='book'>
 					{ebookList.map(ebook => (
-						<Card key={ebook.ipfsHash} {...ebook} />
+						// <Card key={ebook.ipfsHash} {...ebook} />
+						<div key={ebook.ipfsHash}>
+							<div>Author {ebook.authorAddress}</div>
+							<div>IPFS HASH {ebook.ipfsHash}</div>
+							<div>Title {ebook.title}</div>
+							<div>Price {ebook.price}</div>
+						</div>
 					))}
 					<Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
 						<Alert onClose={handleClose} severity='success'>

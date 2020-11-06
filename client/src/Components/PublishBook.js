@@ -124,7 +124,6 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 						Publish your book
 					</Typography>
 					<DrizzleForm
-						ipfsHash={ipfsHash}
 						method='publishBook'
 						drizzle={drizzle}
 						drizzleState={drizzleState}
@@ -183,7 +182,8 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 					</Button>
 				</form>
 
-				<Typography variant='h6'>selected filename: {epubFile}</Typography>
+				<Typography variant='h6' style={{ margin: 5}}>selected filename: {epubFile}</Typography>
+				<Typography variant='h5' style={{ margin: 5}}>IPFS Hash: {ipfsHash}</Typography>
 			</div>
 
 			<Divider />
