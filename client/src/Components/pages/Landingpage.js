@@ -57,73 +57,132 @@ const Landingpage = (props) => {
 	}, [])
 
     return (
-    <div className="landingcontainer">
+      <div className="landingcontainer">
         {walletAddress ? (
-			<>
-				<App />
-            
-            </>
-			) : (
-            
-                <div className="content">
-                    <div className="data">
-                        <div style={{marginLeft: 'auto'}}>
-                            <Button
-                                variant=""
-                                style={{color: 'white'}}
-                                onClick={e => portis.showPortis()}>
-                                <p style={{fontSize: '20px'}}>Login</p>
-                            </Button>
-                        </div>
-                        <div style={{paddingTop: '100px', height:'70%'}}>
-                            <img className="image" src={logo} alt="logo"/>
-                            <p style={{paddingTop: "5rem"}}>
-                                <Typical
-                                className = "para" 
-                                loop = {Infinity}
-                                wrapper = "span"
-                                
-                                steps = {[
-                                    "Decentralized" ,3000,
-                                    "Immutable" ,3000,
-                                    "Secure" ,3000,
-                                    "Easy to Use" ,3000
-                                ]}/>
+          <>
+            <App />
+          </>
+        ) : (
+          <div className="content">
+            <div className="data">
+              <div style={{ marginLeft: "auto" }}>
+                <Button
+                  variant=""
+                  style={{ color: "white" }}
+                  onClick={(e) => portis.showPortis()}
+                >
+                  <p style={{ fontSize: "20px" }}>Login</p>
+                </Button>
+              </div>
+              <div
+                style={{
+                  paddingTop: "100px",
+                  height: "70%",
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                }}
+              >
+                <div>
+                  <img className="image" src={logo} alt="logo" />
+                  <p style={{ paddingTop: "5rem" }}>
+                    <Typical
+                      className="para"
+                      loop={Infinity}
+                      wrapper="span"
+                      steps={[
+                        "Decentralized",
+                        3000,
+                        "Immutable",
+                        3000,
+                        "Secure",
+                        3000,
+                        "Easy to Use",
+                        3000,
+                      ]}
+                    />
+                  </p>
 
-                            </p>
-                            <p className="para" style={{marginTop: '50px', maxWidth:'1000px'}}>A completely <strong style={{color:'yellow'}}>Decentralized</strong> marketplace for selling and buying of ebooks. Anyone can easily upload their ebooks on the platform, which
-                                    can then be purchased by others. Our in-built <strong style={{color:'yellow'}}>eReader</strong> restricts external
-                                    downloads, so it curbs piracy by making sure copyrighted books can’t be shared or circulated illegally.</p>
-                        </div>
-                        <div className="ourteam">
-                            <p>Our Development Team</p>
-                            <div style={{marginTop:'70px'}}>
-                                <DevTeam />
-                            </div>
-                        </div>
-                    </div>
-                    <footer className="footer">
-                        <ul>
-                            <li>
-                                <a href="#"><EmailIcon fontSize="large"/><span>Email ID</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><LinkedInIcon fontSize="large"/><span>LinkedIn</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><GitHubIcon fontSize="large"/><span>Github</span></a>
-                            </li>
-                            <li style={{marginLeft:'auto', marginBottom:'auto', display:'flex'}}>
-                                <span>Powered by - </span><span><a href="#" style={{marginLeft:'40px'}}><img src={portislogo} alt="portis" style={{width:'100px'}}/></a></span><span><a href="#"><img src={maticlogo} alt="matic" style={{width:'150px'}}/></a></span> 
-                            </li>
-                        </ul>
-                        
-                    </footer>
+                  <p
+                    className="para"
+                    style={{ marginTop: "50px", maxWidth: "40rem" }}
+                  >
+                    A completely{" "}
+                    <strong style={{ color: "yellow" }}>Decentralized</strong>{" "}
+                    marketplace for selling and buying of ebooks. Anyone can
+                    easily upload their ebooks on the platform, which can then
+                    be purchased by others. Our in-built{" "}
+                    <strong style={{ color: "yellow" }}>eReader</strong>{" "}
+                    restricts external downloads, so it curbs piracy by making
+                    sure copyrighted books can’t be shared or circulated
+                    illegally.
+                  </p>
                 </div>
-            )
-        }
-    </div>
-)
+                <div style={{ paddingTop: "120px"}}>
+                  <img src="/books.svg" alt="" style={{ width: "35rem", marginLeft: "auto", float: "right"}} />
+                </div>
+              </div>
+              <div className="ourteam">
+                <p>Our Development Team</p>
+                <div style={{ marginTop: "70px" }}>
+                  <DevTeam />
+                </div>
+              </div>
+            </div>
+            <hr/>
+            <br/>
+            <footer className="footer">
+              <ul>
+                <li>
+                  <a href="#">
+                    <EmailIcon fontSize="large" />
+                    <span>Email ID</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <LinkedInIcon fontSize="large" />
+                    <span>LinkedIn</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <GitHubIcon fontSize="large" />
+                    <span>Github</span>
+                  </a>
+                </li>
+                <li
+                  style={{
+                    marginLeft: "auto",
+                    marginBottom: "auto",
+                    display: "flex",
+                  }}
+                >
+                  <span>Powered by - </span>
+                  <span>
+                    <a href="#" style={{ marginLeft: "40px" }}>
+                      <img
+                        src={portislogo}
+                        alt="portis"
+                        style={{ width: "100px" }}
+                      />
+                    </a>
+                  </span>
+                  <span>
+                    <a href="#">
+                      <img
+                        src={maticlogo}
+                        alt="matic"
+                        style={{ width: "150px" }}
+                      />
+                    </a>
+                  </span>
+                </li>
+              </ul>
+            </footer>
+          </div>
+        )}
+      </div>
+    );
 }      
 
 export default Landingpage

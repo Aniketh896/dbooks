@@ -16,7 +16,7 @@ const DevTeam = () => {
   return (
     <div className="devteam" style={{display: 'flex'}}>
       {members.map((members) => {
-        return <div style={{marginLeft:'30px', marginRight:'30px'}}><Member key={members.id} {...members}></Member></div>
+        return <div style={{marginLeft:'40px', marginRight:'40px'}}><Member key={members.id} {...members}></Member></div>
       })}
     </div>
   )
