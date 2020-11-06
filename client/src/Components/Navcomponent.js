@@ -56,15 +56,15 @@ export default function Navcomponent({ walletAddress, email, reputation }) {
 						<>
 							<Link to='/' className={classes.links}>
 								<Button color='inherit' style={{ marginRight: '10px' }}>
-									Home
-								</Button>
-							</Link>
-
-							<Link to='/user' className={classes.links}>
-								<Button color='inherit' style={{ marginRight: '10px' }}>
 									User
 								</Button>
 							</Link>
+
+							{/* <Link to='/user' className={classes.links}>
+								<Button color='inherit' style={{ marginRight: '10px' }}>
+									User
+								</Button>
+							</Link> */}
 
 							<Link to='/ebooks' className={classes.links}>
 								<Button color='inherit' style={{ marginRight: '10px' }}>

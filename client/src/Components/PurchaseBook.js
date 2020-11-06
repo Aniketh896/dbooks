@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { newContextComponents } from '@drizzle/react-components'
-import {
-	useParams,
-	useLocation
-  } from 'react-router-dom'
+import { useParams, useLocation } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
 import CloudUploadIcon from '@material-ui/icons/CloudUpload'
 import Snackbar from '@material-ui/core/Snackbar'
@@ -23,21 +20,17 @@ import {
 	Typography,
 } from '@material-ui/core'
 
-const Alert = (props) => {
+const Alert = props => {
 	return <MuiAlert elevation={6} variant='filled' {...props} />
 }
 
 const useQuery = () => {
-	return new URLSearchParams(useLocation().search);
+	return new URLSearchParams(useLocation().search)
 }
 
 const { AccountData, ContractData, ContractForm } = newContextComponents
 
-export default function PurchaseBook({
-	drizzle,
-	drizzleState,
-	initialized,
-}) {
+export default function PurchaseBook({ drizzle, drizzleState, initialized }) {
 	const classes = useStyles()
 
 	const [dbktBalance, setDbktBalance] = useState(0)
@@ -103,13 +96,13 @@ export default function PurchaseBook({
 			.send({ from: drizzleState.accounts[0] })
 			.then(rx => {
 				console.log('[DEBUG] rx: ', rx)
-			}).catch(err => {
+			})
+			.catch(err => {
 				console.error(err.message)
 				console.log(err)
 				setErrorMessage('failed to purchase book')
 				setErrorOpen(true)
 			})
-		
 	}
 
 	const increaseAllowance = async () => {
@@ -125,7 +118,8 @@ export default function PurchaseBook({
 				DBKTContractWeb3.methods
 					.increaseAllowance(EBookStorage.address, 1000)
 					.send({ from: drizzleState.accounts[0] })
-			}).catch(err => {
+			})
+			.catch(err => {
 				console.error(err.message)
 				console.log(err)
 				setErrorMessage('Failed to increase allowance')
@@ -139,8 +133,13 @@ export default function PurchaseBook({
 
 	return (
 		<Container maxWidth='sm' className={classes.container}>
-			<Card>
-			<div style={{ marginBottom: 20 }}>
+			<div
+				style={{
+					marginBottom: 20,
+					backgroundColor: 'white',
+					padding: 10,
+					borderRadius: 5,
+				}}>
 				<AccountData
 					drizzle={drizzle}
 					drizzleState={drizzleState}
@@ -170,7 +169,6 @@ export default function PurchaseBook({
 					)}
 				/>
 			</div>
-			</Card>
 
 			<Divider />
 
