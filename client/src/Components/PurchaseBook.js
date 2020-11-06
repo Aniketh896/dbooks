@@ -136,7 +136,7 @@ export default function PurchaseBook({ drizzle, drizzleState, initialized }) {
 			<div
 				style={{
 					marginBottom: 20,
-					backgroundColor: 'white',
+					backgroundColor: '#ff6350',
 					padding: 10,
 					borderRadius: 5,
 				}}>
@@ -150,14 +150,14 @@ export default function PurchaseBook({ drizzle, drizzleState, initialized }) {
 						<div>
 							<div>
 								<Typography variant='h6'>
-									My Address: <span style={{ color: 'red' }}>{address}</span>{' '}
+									My Address: <span style={{ color: 'blue' }}>{address}</span>{' '}
 									<br />
 								</Typography>
 								<Typography variant='h6'>
-									MATIC Token: <span style={{ color: 'red' }}>{balance}</span>
+									MATIC Token: <span style={{ color: 'blue' }}>{balance}</span>
 								</Typography>
 								<Typography variant='h6'>
-									My DBKT: <span style={{ color: 'red' }}>{dbktBalance}</span>
+									My DBKT: <span style={{ color: 'blue' }}>{dbktBalance}</span>
 								</Typography>
 							</div>
 							<div>
@@ -173,7 +173,10 @@ export default function PurchaseBook({ drizzle, drizzleState, initialized }) {
 			<Divider />
 
 			<div>
-				<Card>
+				<Card
+					style={{
+						backgroundColor: '#ff6350',
+					}}>
 					<CardContent>
 						<Typography variant='h2'>
 							<span>{title}</span>
