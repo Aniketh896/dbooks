@@ -69,3 +69,15 @@
   margin-bottom: auto;
   padding-left: 10px;
 }
+
+.landingcontainer .ourteam {
+  width: "100%";
+  padding-top: "200px";
+  margin-left: auto;
+  margin-right: auto;
+  height: 800px;
+}
+
+.landingcontainer .ourteam h2 {
+  text-align: center;
+}

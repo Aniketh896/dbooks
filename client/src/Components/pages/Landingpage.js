@@ -7,15 +7,18 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
 import App from '../../App'
+import DevTeam from '../DevTeam'
 
-// import logo from '../../dbooks-logo.svg'
+
+
+import logo from '../../dbooks-logo.svg'
 import './Landingpage.css'
 
 
 const Landingpage = (props) => {
 
     // const classes = useStyles()
-    const { initialized } = props
+    const { initialized } = props;
 
 	const [loading, setLoading] = useState(false)
 
@@ -68,9 +71,15 @@ const Landingpage = (props) => {
                                 <p style={{fontSize: '20px'}}>Login</p>
                             </Button>
                         </div>
-                        <div style={{marginTop: 'auto', marginBottom: 'auto'}}>
-                            <img className="image" src={'/dbooks-logo.svg'} alt="logo"/>
+                        <div style={{paddingTop: '100px', height:'100%'}}>
+                            <img className="image" src={logo} alt="logo"/>
                             <p className="para" style={{marginTop: '50px', maxWidth:'1000px'}}>Our site helps the authors to publish and reach out people in safest way. We prevent piracy and provide full credit to the authors who have worked hard on their books</p>
+                        </div>
+                        <div className="ourteam">
+                            <h2>Our Development Team</h2>
+                            <div style={{marginTop:'100px'}}>
+                                <DevTeam />
+                            </div>
                         </div>
                     </div>
                     <footer className="footer">
@@ -88,7 +97,6 @@ const Landingpage = (props) => {
                         
                     </footer>
                 </div>
-            
             )
         }
     </div>

@@ -8,9 +8,12 @@ const Card = props => {
 	return (
 		<Link to={`/purchase?title=${title}&price=${price}&ipfsHash=${ipfsHash}&author=${author}`}>
 			<article className='card'>
-				<header className='card-title'>
+				<header className='card-title' style={{height:'100%'}}>
 					<h2>{title}</h2>
-					<h2>Source {ipfsHash}</h2>
+					<div style={{maxWidth:'202px'}}>
+						<h2>Source {ipfsHash}</h2>
+					</div>
+					
 				</header>
 
 				<div className='card-author'>
@@ -23,7 +26,7 @@ const Card = props => {
 
 					<div className='author'>
 						<div className='author-heading'>Author</div>
-						{author.slice(0, 4) + '...' + author.slice(author.length - 4, author.length)}
+						{/* {author.slice(0, 4) + '...' + author.slice(author.length - 4, author.length)} */}
 					</div>
 				</div>
 				<div className='tags' style={{ display: 'flex' }}>
