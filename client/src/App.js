@@ -57,7 +57,7 @@ const App = props => {
 		<Router>
 			<CssBaseline />
 
-			<div className='container' style={{ display: 'flex', flexDirection: 'column' }}>
+			<div className='container' style={{ display: 'flex', flexDirection: 'column', backgroundColor: '#17141d' }}>
 				<Switch className='route-wrapper'>
 					{walletAddress ? (
 						<>
@@ -69,7 +69,7 @@ const App = props => {
 								/>
 							</div>
 							<Route exact path='/'>
-								<Homepage {...props} />
+								<EBookListing {...props} />
 							</Route>
 							<Route exact path='/ebooks'>
 								<EBookListing {...props} />

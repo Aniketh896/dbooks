@@ -1,7 +1,7 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: #17141d;
+    background-color: #ff6350;
     color: white;
 }
 
@@ -26,7 +26,7 @@ a {
     min-width: 250px;
     padding: 1.5rem;
     border-radius: 16px;
-    background: #17141d;
+    background: #ff6350;
     box-shadow: -1rem 0 3rem #000;
     display: flex;
     flex-direction: column;

@@ -2,7 +2,9 @@ import React from 'react'
 
 import Navcomponent from "../Navcomponent"
 import Leftbar from "../Leftbar"
-import Bookcard from "../Bookcard"
+import Card from "../Card"
+
+
 import { makeStyles } from '@material-ui/core';
 
 
@@ -62,21 +64,21 @@ const classes = useStyles();
                     <div className={classes.books}>
                         <h3 className={classes.h3}>Latest Books</h3>
                         <hr style={{margin: "0 20px 10px 20px"}}/>
-                        <div className={classes.bookcard}>
-                            <Bookcard />
-                            <Bookcard />
-                            <Bookcard />
-                            <Bookcard />
-                            <Bookcard />
+                        <div className={classes.Card}>
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
                         </div>
                         <h3 className={classes.h3}>Explore Books</h3>
                         <hr style={{margin: "0 20px 10px 20px"}}/>
-                        <div className={classes.bookcard}>
-                            <Bookcard />
-                            <Bookcard />
-                            <Bookcard />
-                            <Bookcard />
-                            <Bookcard />
+                        <div className={classes.Card}>
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
                         </div>
                     </div>
                 </div>

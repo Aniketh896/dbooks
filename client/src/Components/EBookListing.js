@@ -84,7 +84,7 @@ export default function EBookListing({ drizzle, drizzleState, initialized }) {
 
 	return (
 		<Container maxWidth='lg' className={classes.container}>
-			<Typography variant='h3'>Select a book</Typography>
+			<Typography variant='h3' align='center'>Select a book</Typography>
 
 			<div className={classes.wrapper}>
 				<div className='book'>
@@ -118,5 +118,6 @@ const useStyles = makeStyles(theme => ({
 		display: 'grid',
 		width: '100%',
 		height: '100%',
+		color: 'white'
 	},
 }))
