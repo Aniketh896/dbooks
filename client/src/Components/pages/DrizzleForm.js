@@ -39,7 +39,7 @@ const DrizzleForm = ({ drizzle, drizzleState, initialized, method, children, ipf
 									name={input.name}
 									value={state[input.name]}
 									placeholder={input.name}
-									onChange={handleInputChange}
+									onChange={handleInputChange}	
 								/>
 							)
 						})}
@@ -65,12 +65,25 @@ const useStyles = makeStyles(theme => ({
 	formBody: {
 		marginTop: '20px',
 		marginBottom: '20px',
+		color: "white",
 	},
 	textField: {
 		marginTop: '15px',
 		marginBottom: '15px',
 		'& input': {
-			// color: '#e4e4e4',
+			color: 'white',
 		},
+		'& .MuiOutlinedInput-root': {
+			'& fieldset': {
+				borderColor: 'white',
+			},
+			'&:hover fieldset': {
+				borderColor: 'yellow',
+			},
+			'&.Mui-focused fieldset': {
+				borderColor: 'green',
+			},
+		},
+
 	},
 }))

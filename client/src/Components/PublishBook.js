@@ -110,55 +110,47 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 	}
 
 	return (
-    <Container
-      maxWidth="lg"
-      className={classes.container}
-      style={{ color: "white" }}
-    >
-      <div style={{ marginBottom: 20 }}>
-        <AccountData
-          drizzle={drizzle}
-          drizzleState={drizzleState}
-          accountIndex={0}
-          units="ether"
-          precision={3}
-          render={({ address, balance, units }) => (
-            <span style={{ textAlign: "center" }}>
-              <Typography variant="h6">
-                My Address: <span style={{ color: "red" }}>{address}</span>{" "}
-                <br />
-              </Typography>
-              <Typography variant="h6">
-                MATIC Token: <span style={{ color: "red" }}>{balance}</span>
-              </Typography>
-              <Typography variant="h6">
-                My DBKT: <span style={{ color: "red" }}>{dbktBalance}</span>
-              </Typography>
-            </span>
-          )}
-        />
-      </div>
+		<Container maxWidth='lg' className={classes.container}  style={{backgroundColor: '#17141d', color:'white'}}>
+			<div style={{ marginBottom: 20, textAlign:'center'}}>
+				<AccountData
+					drizzle={drizzle}
+					drizzleState={drizzleState}
+					accountIndex={0}
+					units='ether'
+					precision={3}
+					render={({ address, balance, units }) => (
+						<>
+							<Typography variant='h6'>
+								My Address: <span style={{ color: 'red' }}>{address}</span> <br />
+							</Typography>
+							<Typography variant='h6'>
+								MATIC Token: <span style={{ color: 'red' }}>{balance}</span>
+							</Typography>
+							<Typography variant='h6'>
+								My DBKT: <span style={{ color: 'red' }}>{dbktBalance}</span>
+							</Typography>
+						</>
+					)}
+				/>
+			</div>
 
-      <Divider />
-	
-      <div
-        
-         className={classes.formContainer}
-      >
-        <div>
-          <Typography variant="h2" style={{ fontWeight: 700 }}>
-            Publish your book
-          </Typography>
-          <DrizzleForm
-            method="publishBook"
-            drizzle={drizzle}
-            drizzleState={drizzleState}
-            initialized={initialized}
-            setPublishOpen={setPublishOpen}
-            setErrorOpen={setErrorOpen}
-          />
-        </div>
-        {/* 
+			<Divider />
+
+			<div className={classes.formContainer}>
+				<div>
+					<Typography variant='h2' style={{ fontWeight: 700 }}>
+						Publish your book
+					</Typography>
+					<DrizzleForm
+						method='publishBook'
+						drizzle={drizzle}
+						drizzleState={drizzleState}
+						initialized={initialized}
+						setPublishOpen={setPublishOpen}
+						setErrorOpen={setErrorOpen}
+					/>
+				</div>
+												{/* 
 				<div {...getRootProps()}>
 					<input {...getInputProps()} accept='.jpg, .jpeg, .png' />
 					{isDragActive ? (
