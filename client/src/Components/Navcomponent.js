@@ -42,12 +42,7 @@ export default function Navcomponent({ walletAddress, email, reputation }) {
 								variant='h6'
 								className={classes.title}
 								style={{ marginLeft: '10px' }}>
-								{walletAddress.slice(0, 4) +
-									'...' +
-									walletAddress.slice(
-										walletAddress.length - 4,
-										walletAddress.length
-									)}
+								{ email }
 							</Typography>
 						</>
 					)}
