@@ -12,6 +12,7 @@
     "@portis/web3": "^2.0.0-beta.59",
     "ipfs-api": "^26.1.2",
     "ipfs-http-client": "^48.0.0",
+    "js-file-download": "^0.4.12",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-dropzone": "^11.2.3",

@@ -7,8 +7,12 @@ import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Typography from '@material-ui/core/Typography'
+import { ReactReader } from 'react-reader'
+import { Button } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
+	accordion: {},
 	root: {
 		width: '100%',
 	},
@@ -23,6 +27,7 @@ const Accordiancomp = ({ drizzle, drizzleState, initialized }) => {
 
 	const [publishedBookList, setPublishedBookList] = useState([])
 	const [open, setOpen] = useState(false)
+	const [expanded, setExpanded] = useState()
 
 	const handleClose = (event, reason) => {
 		if (reason === 'clickaway') {
@@ -86,7 +91,11 @@ const Accordiancomp = ({ drizzle, drizzleState, initialized }) => {
 		<div className={classes.root}>
 			{publishedBookList.map(ebook => {
 				return (
-					<Accordion key={ebook.ipfsHash}>
+					<Accordion
+						key={ebook.ipfsHash}
+						className={classes.accordion}
+						expanded={expanded === ebook.ipfsHash}
+						onChange={() => setExpanded(ebook.ipfsHash)}>
 						<AccordionSummary
 							expandIcon={<ExpandMoreIcon />}
 							aria-controls='panel1a-content'
@@ -107,6 +116,22 @@ const Accordiancomp = ({ drizzle, drizzleState, initialized }) => {
 									</span>
 									<span>{ebook.price}</span>
 								</p>
+								<div style={{ margin: '20px 5px' }}>
+									<Link
+										to={`/DBookReader?title=${ebook.title}&ipfsHash=${ebook.ipfsHash}`}>
+										<Button
+											style={{ color: '#e4e4e4', backgroundColor: '#17141d' }}
+											variant='contained'>
+											DBook
+										</Button>
+									</Link>
+
+									{/* <ReactReader
+									url={`https://cloudflare-ipfs.com/ipfs/${ebook.ipfsHash || 'QmPgcARp2LGKiY9nU1gF18PD6ZQhkpHaF7YD64vUzjXoTN'}`}
+									title={ebook.title}
+									location={'epubcfi(/6/2[cover]!/6)'}
+								/> */}
+								</div>
 							</Typography>
 						</AccordionDetails>
 					</Accordion>

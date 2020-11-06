@@ -98,7 +98,7 @@ const Profilepage = props => {
 							</CardActions>
 						</Card>
 					</div>
-					<div className='tabs'>
+					<div className='tabs' style={{ width: '100%' }}>
 						<Tabmenu {...props} />
 					</div>
 				</div>

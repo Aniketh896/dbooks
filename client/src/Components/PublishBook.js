@@ -97,12 +97,23 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 	const onSubmit = async event => {
 		event.preventDefault()
 
+		const fileObject = {
+			path: '/dbook.epub',
+			content: buffer,
+		}
 		console.log('on submit')
-		await ipfs.add(buffer, (err, ipfsHash) => {
+
+		await ipfs.add(fileObject, { wrapWithDirectory: true},  (err, ipfsHash) => {
 			console.log(err, ipfsHash)
-			setIpfsHash(ipfsHash[0].hash)
+			setIpfsHash(ipfsHash[1].hash)
 			setUploadOpen(true)
 		})
+
+		// await ipfs.files.write('/epubs/dbook.epub', buffer, { create: true }, (err, ipfsHash) => {
+		// 	console.log(err, ipfsHash)
+		// 	setIpfsHash(ipfsHash[0].hash)
+		// 	setUploadOpen(true)
+		// })
 	}
 
 	if (!initialized) {

@@ -1,20 +1,45 @@
 import { Button } from '@material-ui/core'
-import React, { useState, useEffect } from 'react'
-import {
-	EpubView, // Underlaying epub-canvas (wrapper for epub.js iframe)
-	EpubViewStyle, // Styles for EpubView, you can pass it to the instance as a style prop for customize it
-	ReactReader, // A simple epub-reader with left/right button and chapter navigation
-	ReactReaderStyle, // Styles for the epub-reader it you need to customize it
-	ReaderContainer,
-	FontSizeButton,
-} from 'react-reader'
+import React, { useState, useEffect, useRef } from 'react'
+import { ReactReader } from 'react-reader'
+import { useLocation } from 'react-router-dom'
+import axios from 'axios';
 
 const storage = global.localStorage || null
 
-export default function DBookReader({ url, title }) {
+const useQuery = () => {
+	return new URLSearchParams(useLocation().search)
+}
+
+export default function DBookReader() {
 	const [location, setLocation] = useState(
 		storage && storage.getItem('epub-location') ? storage.getItem('epub-location') : 1
 	)
+
+	const query = useQuery()
+	const url = `https://cloudflare-ipfs.com/ipfs/${query.get('ipfsHash')}/dbook.epub`
+	const DBReaderRef = useRef()
+
+	useEffect(() => {
+		const reader = new FileReader();
+
+		reader.addEventListener("load", function() {
+			console.log('[DEBUG] reader.result: ', reader.result)
+			const dbook = new window.ePub(reader.result);
+			console.log('[DEBUG] dbook: ', dbook)
+			// dbook.renderTo(DBReaderRef, { flow: "paginated"})
+		}, false);
+
+		axios.get(url, {
+			responseType: 'blob',
+		}).then(response => {
+			console.log('[DEBUG] response: ', response)
+			console.log('[DEBUG] response.data: ', response.data)
+			if (response.data) {
+				reader.readAsArrayBuffer(response.data);
+				// DBReaderRef.src = URL.createObjectURL(response.data)
+			}
+		});
+	}, [])
 
 	const [rendition, setRendition] = useState()
 	const [largeText, setLargeText] = useState(false)
@@ -30,6 +55,10 @@ export default function DBookReader({ url, title }) {
 	}
 
 	useEffect(() => {
+		console.log('[DEBUG] url: ', url)
+	}, [])
+
+	useEffect(() => {
 		storage && storage.setItem('epub-location', location)
 	}, [location])
 
@@ -37,7 +66,7 @@ export default function DBookReader({ url, title }) {
 		<div style={{ position: 'relative', height: '100%', paddingTop: 64 }}>
 			<ReactReader
 				url={url || '/alice.epub'}
-				title={title}
+				title={query.get('title')}
 				location={location}
 				locationChanged={setLocation}
 				getRendition={getRendition}

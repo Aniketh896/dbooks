@@ -43,15 +43,13 @@ function a11yProps(index) {
   };
 }
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    maxWidth: 600,
-    minWidth: 600,
-    backgroundColor: theme.palette.background.paper,
-    marginTop: 20
-  },
-}));
+const useStyles = makeStyles(theme => ({
+	root: {
+		flexGrow: 1,
+		backgroundColor: theme.palette.background.paper,
+		marginTop: 20,
+	},
+}))
 
 export default function Tabmenu(props) {
   const classes = useStyles();
