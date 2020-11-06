@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { newContextComponents } from '@drizzle/react-components'
+import {
+	useParams,
+	useLocation
+  } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
 import CloudUploadIcon from '@material-ui/icons/CloudUpload'
 import Snackbar from '@material-ui/core/Snackbar'
@@ -19,8 +23,12 @@ import {
 	Typography,
 } from '@material-ui/core'
 
-function Alert(props) {
+const Alert = (props) => {
 	return <MuiAlert elevation={6} variant='filled' {...props} />
+}
+
+const useQuery = () => {
+	return new URLSearchParams(useLocation().search);
 }
 
 const { AccountData, ContractData, ContractForm } = newContextComponents
@@ -29,16 +37,21 @@ export default function PurchaseBook({
 	drizzle,
 	drizzleState,
 	initialized,
-	ipfsHash,
-	price,
-	author,
-	title,
 }) {
 	const classes = useStyles()
 
 	const [dbktBalance, setDbktBalance] = useState(0)
 	const [uploadOpen, setUploadOpen] = useState(false)
 	const [publishOpen, setPublishOpen] = useState(false)
+	const [errorOpen, setErrorOpen] = useState(false)
+	const [errorMessage, setErrorMessage] = useState('')
+
+	const query = useQuery()
+
+	const title = query.get('title')
+	const author = query.get('author')
+	const ipfsHash = query.get('ipfsHash')
+	const price = query.get('price')
 
 	const setBalance = async () => {
 		const balance = await drizzle.contracts.DBookToken.methods
@@ -71,6 +84,14 @@ export default function PurchaseBook({
 		setPublishOpen(false)
 	}
 
+	const handleErrorClose = (event, reason) => {
+		if (reason === 'clickaway') {
+			return
+		}
+
+		setErrorOpen(false)
+	}
+
 	const purchaseBook = async () => {
 		const web3 = drizzle.web3
 
@@ -82,7 +103,13 @@ export default function PurchaseBook({
 			.send({ from: drizzleState.accounts[0] })
 			.then(rx => {
 				console.log('[DEBUG] rx: ', rx)
+			}).catch(err => {
+				console.error(err.message)
+				console.log(err)
+				setErrorMessage('failed to purchase book')
+				setErrorOpen(true)
 			})
+		
 	}
 
 	const increaseAllowance = async () => {
@@ -98,6 +125,11 @@ export default function PurchaseBook({
 				DBKTContractWeb3.methods
 					.increaseAllowance(EBookStorage.address, 1000)
 					.send({ from: drizzleState.accounts[0] })
+			}).catch(err => {
+				console.error(err.message)
+				console.log(err)
+				setErrorMessage('Failed to increase allowance')
+				setErrorOpen(true)
 			})
 	}
 
@@ -107,6 +139,7 @@ export default function PurchaseBook({
 
 	return (
 		<Container maxWidth='sm' className={classes.container}>
+			<Card>
 			<div style={{ marginBottom: 20 }}>
 				<AccountData
 					drizzle={drizzle}
@@ -137,6 +170,7 @@ export default function PurchaseBook({
 					)}
 				/>
 			</div>
+			</Card>
 
 			<Divider />
 
@@ -170,6 +204,11 @@ export default function PurchaseBook({
 				<Snackbar open={publishOpen} autoHideDuration={6000} onClose={handleClosePublish}>
 					<Alert onClose={handleClosePublish} severity='success'>
 						Purchased ebook successfully!
+					</Alert>
+				</Snackbar>
+				<Snackbar open={errorOpen} autoHideDuration={6000} onClose={handleErrorClose}>
+					<Alert onClose={handleErrorClose} severity='error'>
+						{errorMessage}
 					</Alert>
 				</Snackbar>
 			</div>

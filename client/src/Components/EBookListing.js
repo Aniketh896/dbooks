@@ -1,12 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import Button from '@material-ui/core/Button'
-import Snackbar from '@material-ui/core/Snackbar'
+import { Container, Typography, Snackbar, Button } from '@material-ui/core'
 import MuiAlert from '@material-ui/lab/Alert'
 
 import Card from './Card'
 import './card.css'
-import { Container, Typography } from '@material-ui/core'
 
 function Alert(props) {
 	return <MuiAlert elevation={6} variant='filled' {...props} />
@@ -54,13 +52,13 @@ export default function EBookListing({ drizzle, drizzleState, initialized }) {
 
 		events.forEach(log => {
 			// console.log('[DEBUG] log: ', log)
-			const authorAddress = log.returnValues[0]
+			const author = log.returnValues[0]
 			const ipfsHash = log.returnValues[1]
 			const title = log.returnValues[2]
 			const price = log.returnValues[3]
 
 			const ebook = {
-				authorAddress,
+				author,
 				ipfsHash,
 				title,
 				price,
@@ -84,18 +82,22 @@ export default function EBookListing({ drizzle, drizzleState, initialized }) {
 
 	return (
 		<Container maxWidth='lg' className={classes.container}>
-			<Typography variant='h3' align='center'>Select a book</Typography>
+			<Typography variant='h3' align='center'>
+				
+				Purchase a book
+			
+			</Typography>
 
 			<div className={classes.wrapper}>
 				<div className='book'>
 					{ebookList.map(ebook => (
-						// <Card key={ebook.ipfsHash} {...ebook} />
-						<div key={ebook.ipfsHash}>
-							<div>Author {ebook.authorAddress}</div>
-							<div>IPFS HASH {ebook.ipfsHash}</div>
-							<div>Title {ebook.title}</div>
-							<div>Price {ebook.price}</div>
-						</div>
+						<Card key={ebook.ipfsHash} {...ebook} />
+						// <div key={ebook.ipfsHash}>
+						// 	<div>Author {ebook.author}</div>
+						// 	<div>IPFS HASH {ebook.ipfsHash}</div>
+						// 	<div>Title {ebook.title}</div>
+						// 	<div>Price {ebook.price}</div>
+						// </div>
 					))}
 					<Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
 						<Alert onClose={handleClose} severity='success'>

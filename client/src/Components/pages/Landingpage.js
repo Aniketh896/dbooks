@@ -8,7 +8,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 
 import App from '../../App'
 
-import logo from '../../dbooks-logo.svg'
+// import logo from '../../dbooks-logo.svg'
 import './Landingpage.css'
 
 
@@ -19,13 +19,13 @@ const Landingpage = (props) => {
 
 	const [loading, setLoading] = useState(false)
 
-	useEffect(() => {
-		if (initialized) {
-			setLoading(false)
-		} else {
-			setLoading(true)
-		}
-	}, [initialized])
+	// useEffect(() => {
+	// 	if (initialized) {
+	// 		setLoading(false)
+	// 	} else {
+	// 		setLoading(true)
+	// 	}
+	// }, [initialized])
 
 	const [walletAddress, setWalletAddress] = useState()
 	const [email, setEmail] = useState()
@@ -69,7 +69,7 @@ const Landingpage = (props) => {
                             </Button>
                         </div>
                         <div style={{marginTop: 'auto', marginBottom: 'auto'}}>
-                            <img className="image" src={logo} alt="logo"/>
+                            <img className="image" src={'/dbooks-logo.svg'} alt="logo"/>
                             <p className="para" style={{marginTop: '50px', maxWidth:'1000px'}}>Our site helps the authors to publish and reach out people in safest way. We prevent piracy and provide full credit to the authors who have worked hard on their books</p>
                         </div>
                     </div>

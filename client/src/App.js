@@ -23,13 +23,13 @@ const App = props => {
 
 	const [loading, setLoading] = useState(false)
 
-	useEffect(() => {
-		if (initialized) {
-			setLoading(false)
-		} else {
-			setLoading(true)
-		}
-	}, [initialized])
+	// useEffect(() => {
+	// 	if (initialized) {
+	// 		setLoading(false)
+	// 	} else {	
+	// 		setLoading(true)
+	// 	}
+	// }, [initialized])
 
 	const [walletAddress, setWalletAddress] = useState()
 	const [email, setEmail] = useState()
@@ -81,13 +81,7 @@ const App = props => {
 								<PublishBook {...props} />
 							</Route>
 							<Route exact path='/purchase'>
-								<PurchaseBook
-									{...props}
-									title={'title'}
-									author='0x6A3320b1dd171bBf866115B5d515e1e618481807'
-									price={20}
-									ipfsHash='QmTWz8CyQ1n3TBnrLkdZh3vZjDqU1eHK5LwXCWF88YGkCy'
-								/>
+								<PurchaseBook {...props} />
 							</Route>
 							<Route exact path='/clientLibrary'>
 								<EBookListing {...props} />

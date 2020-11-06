@@ -42,6 +42,8 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 	const [buffer, setBuffer] = useState('')
 	const [uploadOpen, setUploadOpen] = useState(false)
 	const [publishOpen, setPublishOpen] = useState(false)
+	const [errorOpen, setErrorOpen] = useState(false)
+	const [errorMessage, setErrorMessage] = useState('')
 
 	const setBalance = async () => {
 		const balance = await drizzle.contracts.DBookToken.methods
@@ -67,12 +69,12 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 		setUploadOpen(false)
 	}
 
-	const handleClosePublish = (event, reason) => {
+	const handleErrorClose = (event, reason) => {
 		if (reason === 'clickaway') {
 			return
 		}
 
-		setPublishOpen(false)
+		setErrorOpen(false)
 	}
 
 	const captureFile = event => {
@@ -145,6 +147,7 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 						drizzleState={drizzleState}
 						initialized={initialized}
 						setPublishOpen={setPublishOpen}
+						setErrorOpen={setErrorOpen}
 					/>
 				</div>
 												{/* 
@@ -210,9 +213,9 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 						Uploaded file successfully!
 					</Alert>
 				</Snackbar>
-				<Snackbar open={publishOpen} autoHideDuration={6000} onClose={handleClosePublish}>
-					<Alert onClose={handleClosePublish} severity='success'>
-						Published ebook successfully!
+				<Snackbar open={errorOpen} autoHideDuration={6000} onClose={handleErrorClose}>
+					<Alert onClose={handleErrorClose} severity='error'>
+						{errorMessage}
 					</Alert>
 				</Snackbar>
 			</div>

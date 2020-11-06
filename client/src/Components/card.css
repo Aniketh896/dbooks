@@ -35,6 +35,7 @@ a {
     scroll-snap-align: start;
     clear: both;
     position: relative;
+    color: '#e4e4e4';
 }
 
 
@@ -56,7 +57,7 @@ a {
 }
 
 .card-list::-webkit-scrollbar-track {
-    background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
+    background: linear-gradient(90deg,#201c29,#201c29 1px,#20649b 0,#17141d);
 }
 
 
@@ -155,22 +156,26 @@ a {
     padding: .5rem 0 1rem;
     line-height: 2;
     margin-bottom: 0;
+    display: 'flex';
 }
 
-.tags a {
+.tags div {
     font-style: normal;
     font-weight: 700;
     font-size: .5rem;
     color: #7a7a8c;
     text-transform: uppercase;
+    text-align: 'center';
     font-size: .66rem;
     border: 3px solid #28242f;
     border-radius: 2rem;
     padding: .2rem .85rem .25rem;
     position: relative;
+    margin: 'auto';
+    padding: '5px 20px';
 }
 
-.tags a:hover {
+.tags div:hover {
     background: linear-gradient(90deg,#ff8a00,#e52e71);
     text-shadow: none;
     -webkit-text-fill-color: transparent;

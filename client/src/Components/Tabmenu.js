@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Tabmenu() {
+export default function Tabmenu(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -78,10 +78,10 @@ export default function Tabmenu() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Accordiancomp />
+        <Accordiancomp {...props} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Accordiancomp2 />
+        <Accordiancomp2 {...props} />
       </TabPanel>
     </div>
   );
