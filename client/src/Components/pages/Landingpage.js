@@ -84,20 +84,18 @@ const Landingpage = (props) => {
               >
                 <div>
                   <img className="image" src={logo} alt="logo" />
-                  <p style={{ paddingTop: "5rem" }}>
+                  <p style={{paddingTop: "5rem", fontSize:"2rem", fontWeight:'100', width:'100%', color:'#fff8cd'}}>
                     <Typical
-                      className="para"
                       loop={Infinity}
-                      wrapper="span"
                       steps={[
-                        "Decentralized",
-                        3000,
-                        "Immutable",
-                        3000,
-                        "Secure",
-                        3000,
-                        "Easy to Use",
-                        3000,
+                        'Decentralized',
+                        2000,
+                        'Immutable',
+                        2000,
+                        'Secure',
+                        2000,
+                        'Easy to Use',
+                        2000,
                       ]}
                     />
                   </p>
