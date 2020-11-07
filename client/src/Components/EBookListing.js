@@ -81,15 +81,18 @@ export default function EBookListing({ drizzle, drizzleState, initialized }) {
 	}
 
 	return (
-		<Container maxWidth='lg' className={classes.container}>
-			<Typography variant='h3' align='center' style={{marginTop:'50px'}}>
+		<div className={classes.container}>
+			
+
+			<div className={classes.container2}>
+				
+			<div className={classes.wrapper}>
+				<Typography variant='h3' align='center' style={{marginTop:'50px'}}>
 				
 				Purchase a book
 			
-			</Typography>
-
-			<div className={classes.wrapper}>
-				<div className='book'>
+				</Typography>
+				<div className='book' style={{width: '70%', marginLeft:"auto", marginRight:"auto"}}>
 					{ebookList.map(ebook => (
 						<Card key={ebook.ipfsHash} {...ebook} />
 						// <div key={ebook.ipfsHash}>
@@ -106,7 +109,9 @@ export default function EBookListing({ drizzle, drizzleState, initialized }) {
 					</Snackbar>
 				</div>
 			</div>
-		</Container>
+			</div>
+			
+		</div>
 	)
 }
 
@@ -116,10 +121,20 @@ const useStyles = makeStyles(theme => ({
 		height: '100%',
 	},
 	container: {
+		marginTop: "63.99px",
+		display: 'grid',
+		width: '100%',
+		height: '100%',
+		color: 'white',
+		margin: '0px',
+		overflow:'hidden'
+	},
+	container2: {
 		paddingTop: 64,
 		display: 'grid',
 		width: '100%',
 		height: '100%',
-		color: 'white'
+		color: 'white',
+		overflowX:'auto'
 	},
 }))

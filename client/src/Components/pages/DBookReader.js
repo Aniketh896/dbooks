@@ -63,7 +63,7 @@ export default function DBookReader() {
 	}, [location])
 
 	return (
-		<div style={{ position: 'relative', height: '100%', paddingTop: 64 }}>
+		<div style={{ height: '100%', marginTop:"63.99px"}}>
 			<ReactReader
 				url={url || '/alice.epub'}
 				title={query.get('title')}

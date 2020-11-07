@@ -11,7 +11,7 @@ import { portis } from '../drizzleOptions'
 const useStyles = makeStyles(theme => ({
 	root: {
 		flexGrow: 1,
-		zIndex: 200,
+		zIndex: theme.zIndex.drawer + 1,
 	},
 	menuButton: {
 		marginRight: theme.spacing(2),
@@ -29,7 +29,7 @@ export default function Navcomponent({ walletAddress, email, reputation }) {
 
 	return (
 		<div className={classes.root}>
-			<AppBar position='static' style={{ backgroundColor: 'rgba(47,79,79,0.5)', height: '63.99px' }}>
+			<AppBar position='fixed' style={{ backgroundColor: 'rgba(47,79,79,0.5)', height: '63.99px' }}>
 				<Toolbar style={{ margin: 'auto 0' }}>
 					{walletAddress && (
 						<>
