@@ -130,19 +130,19 @@ const Landingpage = (props) => {
             <br/>
             <footer className="footer">
               <ul>
-                <li>
+                <li  style={{marginTop:'20px'}}>
                   <a href="#">
                     <EmailIcon fontSize="large" />
                     <span>Email ID</span>
                   </a>
                 </li>
-                <li>
+                <li  style={{marginTop:'20px'}}>
                   <a href="#">
                     <LinkedInIcon fontSize="large" />
                     <span>LinkedIn</span>
                   </a>
                 </li>
-                <li>
+                <li  style={{marginTop:'20px'}}>
                   <a href="#">
                     <GitHubIcon fontSize="large" />
                     <span>Github</span>
@@ -157,7 +157,7 @@ const Landingpage = (props) => {
                 >
                   <span>Powered by - </span>
                   <span>
-                    <a href="#" style={{ marginLeft: "40px" }}>
+                    <a href="#" style={{ marginLeft: "40px"}}>
                       <img
                         src={portislogo}
                         alt="portis"
@@ -170,7 +170,7 @@ const Landingpage = (props) => {
                       <img
                         src={maticlogo}
                         alt="matic"
-                        style={{ width: "150px" }}
+                        style={{ width: "150px"}}
                       />
                     </a>
                   </span>
