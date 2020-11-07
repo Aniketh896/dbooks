@@ -73,11 +73,11 @@ export default function Navcomponent({ walletAddress, email, reputation }) {
 								</Button>
 							</Link>
 
-							<Link to='/purchase' className={classes.links}>
+							{/* <Link to='/purchase' className={classes.links}>
 								<Button color='inherit' style={{ marginRight: '10px' }}>
 									purchase
 								</Button>
-							</Link>
+							</Link> */}
 
 							<Button
 								style={({ color: 'inherit' }, { backgroundColor: '#E7CAEC' })}
