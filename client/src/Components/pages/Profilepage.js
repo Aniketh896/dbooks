@@ -41,6 +41,7 @@ const useStyles = makeStyles({
 	card: {
 		maxWidth: 345,
 		margin: '0 auto',
+		backgroundColor:'#a6f6f1'
 	},
 	pic: {
 		width: 200,
@@ -76,6 +77,7 @@ const Profilepage = props => {
 											height: 200,
 											margin: '10 auto',
 											borderRadius: '50%',
+											border:'1px solid #41aea9'
 										}}
 									/>
 								</CardMedia>

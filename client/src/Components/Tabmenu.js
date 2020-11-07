@@ -46,7 +46,7 @@ function a11yProps(index) {
 const useStyles = makeStyles(theme => ({
 	root: {
 		flexGrow: 1,
-		backgroundColor: theme.palette.background.paper,
+		backgroundColor:'#a6f6f1',
 		marginTop: 20,
 	},
 }))
@@ -64,9 +64,10 @@ export default function Tabmenu(props) {
       <AppBar position="static" color="default">
         <Tabs
           value={value}
+          style={{backgroundColor:'#213e3b', color:'white'}}
           onChange={handleChange}
           indicatorColor="primary"
-          textColor="primary"
+          textColor="white"
           variant="scrollable"
           scrollButtons="auto"
           aria-label="scrollable auto tabs example"

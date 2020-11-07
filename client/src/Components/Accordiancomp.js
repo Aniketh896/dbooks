@@ -12,13 +12,18 @@ import { Button } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
-	accordion: {},
+	accordion: {
+		backgroundColor:'#213e3b'
+	},
 	root: {
 		width: '100%',
+		
 	},
 	heading: {
 		fontSize: theme.typography.pxToRem(20),
 		fontWeight: theme.typography.fontWeightRegular,
+		color:'white'
+		
 	},
 }))
 
@@ -106,11 +111,11 @@ const Accordiancomp = ({ drizzle, drizzleState, initialized }) => {
 						</AccordionSummary>
 						<AccordionDetails>
 							<Typography variant='body1' gutterBottom>
-								<p>
+								<p style={{color:'white'}}>
 									<strong>Author: </strong>
 									{ebook.author}
 								</p>
-								<p>
+								<p style={{color:'white'}}>
 									<span>
 										<strong>Price: </strong>
 									</span>
