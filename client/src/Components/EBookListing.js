@@ -82,7 +82,7 @@ export default function EBookListing({ drizzle, drizzleState, initialized }) {
 
 	return (
 		<Container maxWidth='lg' className={classes.container}>
-			<Typography variant='h3' align='center'>
+			<Typography variant='h3' align='center' style={{marginTop:'50px'}}>
 				
 				Purchase a book
 			

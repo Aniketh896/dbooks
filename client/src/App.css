@@ -11,4 +11,9 @@
 
 .container {
   height: 100vh;
+  display: 'flex'; 
+  flex-direction: 'column'; 
+  background: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)),
+  url("/wallpaper.jpg");
+  background-size: cover;
 }

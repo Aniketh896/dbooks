@@ -136,7 +136,7 @@ export default function PurchaseBook({ drizzle, drizzleState, initialized }) {
 			<div
 				style={{
 					marginBottom: 20,
-					backgroundColor: '#ff6350',
+					backgroundColor: '#2F4F4F',
 					padding: 10,
 					borderRadius: 5,
 				}}>
@@ -149,19 +149,20 @@ export default function PurchaseBook({ drizzle, drizzleState, initialized }) {
 					render={({ address, balance, units }) => (
 						<div>
 							<div>
-								<Typography variant='h6'>
-									My Address: <span style={{ color: 'blue' }}>{address}</span>{' '}
+								<Typography variant='h6' style={{ color: 'white' }}>
+									My Address: <span style={{ color: 'aqua' }}>{address}</span>{' '}
 									<br />
 								</Typography>
-								<Typography variant='h6'>
-									MATIC Token: <span style={{ color: 'blue' }}>{balance}</span>
+								<Typography variant='h6' style={{ color: 'white' }}>
+									MATIC Token: <span style={{ color: 'aqua' }}>{balance}</span>
 								</Typography>
-								<Typography variant='h6'>
-									My DBKT: <span style={{ color: 'blue' }}>{dbktBalance}</span>
+								<Typography variant='h6'
+								style={{ color: 'white' }}>
+									My DBKT: <span style={{ color: 'aqua' }}>{dbktBalance}</span>
 								</Typography>
 							</div>
 							<div>
-								<Button varaint='contained' onClick={increaseAllowance}>
+								<Button varaint='contained' onClick={increaseAllowance} style={{ color: 'aqua' }}>
 									Increase Allowance
 								</Button>
 							</div>
@@ -175,21 +176,21 @@ export default function PurchaseBook({ drizzle, drizzleState, initialized }) {
 			<div>
 				<Card
 					style={{
-						backgroundColor: '#ff6350',
+						backgroundColor: '#2F4F4F',
 					}}>
 					<CardContent>
-						<Typography variant='h2'>
+						<Typography variant='h2' style={{ color: 'aqua' }}>
 							<span>{title}</span>
 						</Typography>
-						<Typography variant='caption'>
+						<Typography variant='caption' style={{ color: 'white' }}>
 							by, <span>{author}</span>
 						</Typography>
-						<Typography variant='body1'>
+						<Typography variant='body1' style={{ color: 'white' }}>
 							price: <span>{price}</span>
 						</Typography>
 					</CardContent>
 					<CardActions>
-						<Button size='medium' onClick={purchaseBook}>
+						<Button size='medium' onClick={purchaseBook} style={{ color: 'aqua' }}>
 							Purchase
 						</Button>
 					</CardActions>

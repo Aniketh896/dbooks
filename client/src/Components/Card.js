@@ -10,15 +10,13 @@ const Card = props => {
 			<article className='card'>
 				<header className='card-title' style={{height:'100%'}}>
 					<h2>{title}</h2>
-					<div style={{maxWidth:'202px'}}>
-						<h2>Source {ipfsHash}</h2>
-					</div>
+					
 					
 				</header>
 
 				<div className='card-author'>
 					<div className='author-avatar' href='#'>
-						<img src={'/dbooks-logo.svg'} />
+						<img src='/dbooks-mini.svg' />
 					</div>
 					<svg className='half-circle' viewBox='0 0 106 57'>
 						<path d='M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4'></path>

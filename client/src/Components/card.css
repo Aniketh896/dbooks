@@ -26,7 +26,7 @@ a {
     min-width: 250px;
     padding: 1.5rem;
     border-radius: 16px;
-    background: #ff6350;
+    background:#36393F;
     box-shadow: -1rem 0 3rem #000;
     display: flex;
     flex-direction: column;
@@ -53,7 +53,7 @@ a {
 .card-list::-webkit-scrollbar-thumb {
     background: #201c29;
     border-radius: 10px;
-    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+    box-shadow: inset 2px 2px 2px blue(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
 }
 
 .card-list::-webkit-scrollbar-track {
@@ -76,12 +76,13 @@ a {
 
 .card-title {
     margin-bottom: auto;
+    color: aqua;
 }
 
 .card-title p {
     font-size: 14px;
     margin: 0 0 1rem;
-    color: #7a7a8c;
+    color:   aqua;
 }
 
 .card-title h2 {
@@ -121,7 +122,6 @@ a {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    filter: grayscale(100%);
     display: block;
     overflow: hidden;
     margin: 16px 10px;
@@ -135,7 +135,7 @@ a {
 .author-heading {
     font-style: normal;
     font-weight: 700;
-    color: #7a7a8c;
+    color:   aqua;
 }
 
 .half-circle {
@@ -161,9 +161,9 @@ a {
 
 .tags div {
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     font-size: .5rem;
-    color: #7a7a8c;
+    color:   aqua;
     text-transform: uppercase;
     text-align: 'center';
     font-size: .66rem;

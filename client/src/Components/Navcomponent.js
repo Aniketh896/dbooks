@@ -29,7 +29,7 @@ export default function Navcomponent({ walletAddress, email, reputation }) {
 
 	return (
 		<div className={classes.root}>
-			<AppBar position='static' style={{ backgroundColor: '#0F1849', height: '63.99px' }}>
+			<AppBar position='static' style={{ backgroundColor: 'rgba(47,79,79,0.5)', height: '63.99px' }}>
 				<Toolbar style={{ margin: 'auto 0' }}>
 					{walletAddress && (
 						<>
