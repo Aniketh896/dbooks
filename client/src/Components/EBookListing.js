@@ -82,35 +82,31 @@ export default function EBookListing({ drizzle, drizzleState, initialized }) {
 
 	return (
 		<div className={classes.container}>
-			
-
 			<div className={classes.container2}>
-				
-			<div className={classes.wrapper}>
-				<Typography variant='h3' align='center' style={{marginTop:'50px'}}>
-				
-				Purchase a book
-			
-				</Typography>
-				<div className='book' style={{width: '70%', marginLeft:"auto", marginRight:"auto"}}>
-					{ebookList.map(ebook => (
-						<Card key={ebook.ipfsHash} {...ebook} />
-						// <div key={ebook.ipfsHash}>
-						// 	<div>Author {ebook.author}</div>
-						// 	<div>IPFS HASH {ebook.ipfsHash}</div>
-						// 	<div>Title {ebook.title}</div>
-						// 	<div>Price {ebook.price}</div>
-						// </div>
-					))}
-					<Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-						<Alert onClose={handleClose} severity='success'>
-							This is a success message!
-						</Alert>
-					</Snackbar>
+				<div className={classes.wrapper}>
+					<Typography variant='h3' align='center' style={{ marginTop: '50px' }}>
+						Purchase a book
+					</Typography>
+					<div
+						className='book'
+						style={{ width: '70%', marginLeft: 'auto', marginRight: 'auto' }}>
+						{ebookList.map(ebook => (
+							<Card key={ebook.ipfsHash} {...ebook} />
+							// <div key={ebook.ipfsHash}>
+							// 	<div>Author {ebook.author}</div>
+							// 	<div>IPFS HASH {ebook.ipfsHash}</div>
+							// 	<div>Title {ebook.title}</div>
+							// 	<div>Price {ebook.price}</div>
+							// </div>
+						))}
+						<Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+							<Alert onClose={handleClose} severity='success'>
+								This is a success message!
+							</Alert>
+						</Snackbar>
+					</div>
 				</div>
 			</div>
-			</div>
-			
 		</div>
 	)
 }
@@ -121,13 +117,13 @@ const useStyles = makeStyles(theme => ({
 		height: '100%',
 	},
 	container: {
-		marginTop: "63.99px",
+		marginTop: '63.99px',
 		display: 'grid',
 		width: '100%',
 		height: '100%',
 		color: 'white',
 		margin: '0px',
-		overflow:'hidden'
+		overflow: 'hidden',
 	},
 	container2: {
 		paddingTop: 64,
@@ -135,6 +131,6 @@ const useStyles = makeStyles(theme => ({
 		width: '100%',
 		height: '100%',
 		color: 'white',
-		overflowX:'auto'
+		overflowX: 'auto',
 	},
 }))

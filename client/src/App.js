@@ -71,7 +71,7 @@ const App = props => {
 								/>
 							</div>
 							<Route exact path='/'>
-								<Profilepage {...props} />
+								<Profilepage email={email} {...props} />
 							</Route>
 							<Route exact path='/ebooks'>
 								<EBookListing {...props} />

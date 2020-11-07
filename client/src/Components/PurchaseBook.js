@@ -208,11 +208,11 @@ export default function PurchaseBook({ drizzle, drizzleState, initialized }) {
 						Purchased ebook successfully!
 					</Alert>
 				</Snackbar>
-				<Snackbar open={errorOpen} autoHideDuration={6000} onClose={handleErrorClose}>
+				{/* <Snackbar open={errorOpen} autoHideDuration={6000} onClose={handleErrorClose}>
 					<Alert onClose={handleErrorClose} severity='error'>
 						{errorMessage}
 					</Alert>
-				</Snackbar>
+				</Snackbar> */}
 			</div>
 		</Container>
 	)

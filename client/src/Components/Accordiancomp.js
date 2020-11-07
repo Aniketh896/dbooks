@@ -7,7 +7,6 @@ import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Typography from '@material-ui/core/Typography'
-import { ReactReader } from 'react-reader'
 import { Button } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 
@@ -54,7 +53,7 @@ const Accordiancomp = ({ drizzle, drizzleState, initialized }) => {
 
 	const setupPublishedBookListing = async () => {
 		const events = await getPastEvents('publishedBookEvent', {
-			filter: { _client: drizzleState.accounts[0] },
+			filter: { _author: drizzleState.accounts[0] },
 			fromBlock: 0,
 			toBLock: 'latest',
 		})
@@ -151,6 +150,7 @@ export const Accordiancomp2 = ({ drizzle, drizzleState, initialized }) => {
 
 	const [purchasedBookList, setPurchasedBookList] = useState([])
 	const [open, setOpen] = useState(false)
+	const [expanded, setExpanded] = useState('')
 
 	const handleClose = (event, reason) => {
 		if (reason === 'clickaway') {
@@ -218,7 +218,11 @@ export const Accordiancomp2 = ({ drizzle, drizzleState, initialized }) => {
 		<div className={classes.root}>
 			{purchasedBookList.map(ebook => {
 				return (
-					<Accordion key={ebook.ipfsHash}>
+					<Accordion
+						key={ebook.ipfsHash}
+						className={classes.accordion}
+						expanded={expanded === ebook.ipfsHash}
+						onChange={() => setExpanded(ebook.ipfsHash)}>
 						<AccordionSummary
 							expandIcon={<ExpandMoreIcon />}
 							aria-controls='panel1a-content'
@@ -229,21 +233,37 @@ export const Accordiancomp2 = ({ drizzle, drizzleState, initialized }) => {
 						</AccordionSummary>
 						<AccordionDetails>
 							<Typography variant='body1' gutterBottom>
-								<p>
+								<p style={{color:'white'}}>
 									<strong>Author: </strong>
 									{ebook.author}
 								</p>
-								<p>
+								<p style={{color:'white'}}>
 									<span>
 										<strong>Price: </strong>
 									</span>
 									<span>{ebook.price}</span>
 								</p>
+								<div style={{ margin: '20px 5px' }}>
+									<Link
+										to={`/DBookReader?title=${ebook.title}&ipfsHash=${ebook.ipfsHash}`}>
+										<Button
+											style={{ color: '#e4e4e4', backgroundColor: '#17141d' }}
+											variant='contained'>
+											DBook
+										</Button>
+									</Link>
+
+									{/* <ReactReader
+									url={`https://cloudflare-ipfs.com/ipfs/${ebook.ipfsHash || 'QmPgcARp2LGKiY9nU1gF18PD6ZQhkpHaF7YD64vUzjXoTN'}`}
+									title={ebook.title}
+									location={'epubcfi(/6/2[cover]!/6)'}
+								/> */}
+								</div>
 							</Typography>
 						</AccordionDetails>
 					</Accordion>
-				)
-			})}
+				 )
+		 	})}
 		</div>
 	)
 }

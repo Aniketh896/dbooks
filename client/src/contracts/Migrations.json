@@ -922,12 +922,12 @@
     "80001": {
       "events": {},
       "links": {},
-      "address": "0x14819F27a87Bf11757Ae60D0F977878697491722",
-      "transactionHash": "0xe925f5514b0500c8560b19d95ae576eb37b532ab48ddabdb23a1182f97029f29"
+      "address": "0xE6fb6BB86442A9562D220fFfE74667bC285773b4",
+      "transactionHash": "0x01888222e390154a46cb5c7ffef765e20906f70462babbf11e16bda11c874245"
     }
   },
   "schemaVersion": "3.3.1",
-  "updatedAt": "2020-11-06T10:37:05.756Z",
+  "updatedAt": "2020-11-07T10:03:50.661Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

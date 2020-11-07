@@ -78,27 +78,33 @@ const Profilepage = props => {
 											height: 200,
 											margin: '10 auto',
 											borderRadius: '50%',
-											border:'1px solid #41aea9'
+											border: '1px solid #41aea9',
 										}}
 									/>
 								</CardMedia>
-								<CardContent style={{backgroundColor:'#28abb9'}}>
+								<CardContent style={{ backgroundColor: '#28abb9' }}>
 									<Typography gutterBottom variant='h5' component='h2'>
-										UserName
+										{props.email}
 									</Typography>
-									<Typography style={{fontSize:'18px'}} variant='body2' color='textSecondary' component='p'>
-										<strong>Bio: </strong>I am an author in making and trying my chances in the writer's world. I like writing suspense stories and drama. 
+									<Typography
+										style={{ fontSize: '18px' }}
+										variant='body2'
+										color='textSecondary'
+										component='p'>
+										<strong>Bio: </strong>I am an author in making and trying my
+										chances in the writer's world. I like writing suspense
+										stories and drama.
 									</Typography>
 								</CardContent>
 							</CardActionArea>
-							<CardActions style={{backgroundColor:'#28abb9'}}>
+							<CardActions style={{ backgroundColor: '#28abb9' }}>
 								<Button variant='contained' size='small' color='primary'>
 									Edit
 								</Button>
 							</CardActions>
 						</Card>
 					</div>
-					<div className='tabs' style={{ width: '100%', marginRight: '20px'}}>
+					<div className='tabs' style={{ width: '100%', marginRight: '20px' }}>
 						<Tabmenu {...props} />
 					</div>
 				</div>
