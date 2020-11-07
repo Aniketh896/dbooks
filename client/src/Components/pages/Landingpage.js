@@ -104,7 +104,7 @@ const Landingpage = (props) => {
 
                   <p
                     className="para"
-                    style={{ marginTop: "50px", maxWidth: "40rem" }}
+                    style={{ marginTop: "50px", maxWidth: "50rem" }}
                   >
                     A completely{" "}
                     <strong style={{ color: "yellow" }}>Decentralized</strong>{" "}
@@ -118,7 +118,7 @@ const Landingpage = (props) => {
                   </p>
                 </div>
                 <div style={{ paddingTop: "120px"}}>
-                  <img src="/books.svg" alt="" style={{ width: "35rem", marginLeft: "auto", float: "right"}} />
+                  <img src="/books.svg" alt="" style={{ width: "30rem", marginLeft: "auto", float: "right"}} />
                 </div>
               </div>
               <div className="ourteam">

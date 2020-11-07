@@ -6,7 +6,7 @@ const Member = (props) => {
 
     return (
         <div className="member">
-            <img src={img} alt="Member" style={{width: '150px', borderRadius:'50%'}}/>
+            <img src={img} alt="Member" style={{width: '170px', borderRadius:'50%'}}/>
             <h2 style={{textAlign:'center'}}>{name}</h2>
             <h3 style={{textAlign:'center'}}>{post}</h3>
         </div>
