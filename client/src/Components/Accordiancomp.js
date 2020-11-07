@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
 	accordion: {
-		backgroundColor:'#213e3b'
+		backgroundColor:'#214252'
 	},
 	root: {
 		width: '100%',

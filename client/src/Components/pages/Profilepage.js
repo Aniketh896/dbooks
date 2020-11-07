@@ -41,7 +41,8 @@ const useStyles = makeStyles({
 	card: {
 		maxWidth: 345,
 		margin: '0 auto',
-		backgroundColor:'#a6f6f1'
+		backgroundColor:'#a6f6f1',
+		borderRadius:'15px'
 	},
 	pic: {
 		width: 200,
@@ -81,16 +82,16 @@ const Profilepage = props => {
 										}}
 									/>
 								</CardMedia>
-								<CardContent>
+								<CardContent style={{backgroundColor:'#28abb9'}}>
 									<Typography gutterBottom variant='h5' component='h2'>
 										UserName
 									</Typography>
-									<Typography variant='body2' color='textSecondary' component='p'>
+									<Typography style={{fontSize:'18px'}} variant='body2' color='textSecondary' component='p'>
 										<strong>Bio: </strong>I am an author in making and trying my chances in the writer's world. I like writing suspense stories and drama. 
 									</Typography>
 								</CardContent>
 							</CardActionArea>
-							<CardActions>
+							<CardActions style={{backgroundColor:'#28abb9'}}>
 								<Button variant='contained' size='small' color='primary'>
 									Edit
 								</Button>
