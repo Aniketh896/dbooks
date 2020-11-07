@@ -58,12 +58,8 @@ const App = props => {
 			<CssBaseline />
 
 			<div
-<<<<<<< Updated upstream
 				className='container'
 				style={{ display: 'flex', flexDirection: 'column', backgroundColor: '#373a40' }}>
-=======
-				className='container'>
->>>>>>> Stashed changes
 				<Switch className='route-wrapper'>
 					{walletAddress ? (
 						<>
