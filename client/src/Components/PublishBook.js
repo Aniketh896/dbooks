@@ -8,7 +8,7 @@ import { useDropzone } from 'react-dropzone'
 
 import DrizzleForm from './pages/DrizzleForm'
 import ipfs from '../ipfs'
-import { Container, Divider, IconButton, makeStyles, Paper, Typography } from '@material-ui/core'
+import { Container, Divider, TextField, makeStyles, Paper, Typography } from '@material-ui/core'
 
 function Alert(props) {
 	return <MuiAlert elevation={6} variant='filled' {...props} />
@@ -60,7 +60,6 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 		}
 	}, [initialized])
 
-
 	const handleCloseUpload = (event, reason) => {
 		if (reason === 'clickaway') {
 			return
@@ -103,7 +102,7 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 		}
 		console.log('on submit')
 
-		await ipfs.add(fileObject, { wrapWithDirectory: true},  (err, ipfsHash) => {
+		await ipfs.add(fileObject, { wrapWithDirectory: true }, (err, ipfsHash) => {
 			console.log(err, ipfsHash)
 			setIpfsHash(ipfsHash[1].hash)
 			setUploadOpen(true)
@@ -121,8 +120,11 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 	}
 
 	return (
-		<Container maxWidth='lg' className={classes.container}  style={{backgroundColor: 'rgba(23,20,29,0.5)' ,color:'white'}}>
-			<div style={{ marginBottom: 20, textAlign:'center'}}>
+		<Container
+			maxWidth='lg'
+			className={classes.container}
+			style={{ backgroundColor: 'rgba(23,20,29,0.5)', color: 'white' }}>
+			<div style={{ marginBottom: 20, textAlign: 'center' }}>
 				<AccountData
 					drizzle={drizzle}
 					drizzleState={drizzleState}
@@ -161,7 +163,7 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 						setErrorOpen={setErrorOpen}
 					/>
 				</div>
-												{/* 
+				{/* 
 				<div {...getRootProps()}>
 					<input {...getInputProps()} accept='.jpg, .jpeg, .png' />
 					{isDragActive ? (
@@ -179,72 +181,73 @@ export default function PublishBook({ drizzle, drizzleState, initialized }) {
 						</div>
 					)}
 				</div> */}
-      </div>
-      <Divider />
+			</div>
+			<Divider />
 
-      <div className={classes.fileForm}>
-        <form onSubmit={onSubmit}>
-          <input
-            type="file"
-            accept=".epub"
-            onChange={captureFile}
-            style={{ display: "none" }}
-            id="icon-button-file"
-          />
-          <label htmlFor="icon-button-file">
-            <Button
-              color="default"
-              aria-label="upload epub"
-              component="span"
-              variant="contained"
-              startIcon={<CloudUploadIcon />}
-            >
-              Select epub file
-            </Button>
-          </label>
-          <Button
-            variant="contained"
-            color="default"
-            component="span"
-            onClick={onSubmit}
-            style={{ marginLeft: 20 }}
-          >
-            Upload
-          </Button>
-        </form>
+			<div className={classes.fileForm}>
+				<form onSubmit={onSubmit}>
+					<input
+						type='file'
+						accept='.epub'
+						onChange={captureFile}
+						style={{ display: 'none' }}
+						id='icon-button-file'
+					/>
+					<label htmlFor='icon-button-file'>
+						<Button
+							color='default'
+							aria-label='upload epub'
+							component='span'
+							variant='contained'
+							startIcon={<CloudUploadIcon />}>
+							Select epub file
+						</Button>
+					</label>
+					<Button
+						variant='contained'
+						color='default'
+						component='span'
+						onClick={onSubmit}
+						style={{ marginLeft: 20 }}>
+						Upload
+					</Button>
+				</form>
 
-        <Typography variant="h6" style={{ margin: 5 }}>
-          selected filename: {epubFile}
-        </Typography>
-        <Typography variant="h5" style={{ margin: 5 }}>
-          IPFS Hash: {ipfsHash}
-        </Typography>
-      </div>
+				<Typography variant='h6' style={{ margin: 5 }}>
+					selected filename: {epubFile}
+				</Typography>
+				<Typography variant='h5' style={{ margin: 5, width: '100%' }}>
+					IPFS Hash:
+					<span style={{ width: '100%' }}>
+						<input
+							id='filled-read-only-input'
+							label='IPFS Hash'
+							variant='outlined'
+							color='secondary'
+							variant='filled'
+							value={ipfsHash}
+							style={{ marginTop: 20, marginLeft: 10 }}
+						/>
+					</span>
+				</Typography>
+			</div>
 
-      <Divider />
+			<Divider />
 
-      <div className={classes.root}>
-        <Snackbar
-          open={uploadOpen}
-          autoHideDuration={6000}
-          onClose={handleCloseUpload}
-        >
-          <Alert onClose={handleCloseUpload} severity="success">
-            Uploaded file successfully!
-          </Alert>
-        </Snackbar>
-        <Snackbar
-          open={errorOpen}
-          autoHideDuration={6000}
-          onClose={handleErrorClose}
-        >
-          <Alert onClose={handleErrorClose} severity="error">
-            {errorMessage}
-          </Alert>
-        </Snackbar>
-      </div>
-    </Container>
-  );
+			<div className={classes.root}>
+				<Snackbar open={uploadOpen} autoHideDuration={6000} onClose={handleCloseUpload}>
+					<Alert onClose={handleCloseUpload} severity='success'>
+						Uploaded file successfully!
+					</Alert>
+				</Snackbar>
+				<Snackbar open={errorOpen} autoHideDuration={6000} onClose={handleErrorClose}>
+					<Alert onClose={handleErrorClose} severity='error'>
+						{errorMessage}
+					</Alert>
+				</Snackbar>
+			</div>
+		</Container>
+	)
 }
 
 const useStyles = makeStyles(theme => ({
