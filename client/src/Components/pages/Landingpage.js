@@ -143,7 +143,7 @@ const Landingpage = (props) => {
                   </a>
                 </li>
                 <li  style={{marginTop:'20px'}}>
-                  <a href="#">
+                  <a href="https://github.com/Aniketh896/dbooks" target="_blank">
                     <GitHubIcon fontSize="large" />
                     <span>Github</span>
                   </a>

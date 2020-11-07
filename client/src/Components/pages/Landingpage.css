@@ -39,7 +39,7 @@
 }
 
 .landingcontainer .image {
-  width: 300px;
+  width: 32rem;
 }
 
 .landingcontainer .para {
@@ -82,5 +82,5 @@
 
 .landingcontainer .ourteam p {
   text-align: center;
-  font-size: 50px;
+  font-size: 35px;
 }
