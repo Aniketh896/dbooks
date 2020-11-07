@@ -64,7 +64,7 @@ export default function Tabmenu(props) {
       <AppBar position="static" color="default">
         <Tabs
           value={value}
-          style={{backgroundColor:'#213e3b', color:'white'}}
+          style={{backgroundColor:'#1f6f8b', color:'white'}}
           onChange={handleChange}
           indicatorColor="primary"
           textColor="white"

@@ -59,7 +59,7 @@ const App = props => {
 
 			<div
 				className='container'
-				style={{ display: 'flex', flexDirection: 'column', backgroundColor: '#17141d' }}>
+				style={{ display: 'flex', flexDirection: 'column', backgroundColor: '#373a40' }}>
 				<Switch className='route-wrapper'>
 					{walletAddress ? (
 						<>
