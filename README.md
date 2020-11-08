@@ -2,7 +2,7 @@
 
 > An experimental deployed version is available [here](https://dbooks.netlify.app/)
 
-![DBOOKS](https://github.com/Aniketh896/dbooks/client/public/dbooks-logo.svg)
+![DBOOKS](https://ipfs.io/ipfs/QmbT7AkgMLkffSYY4V4TvLD6UoTXJnEw4n5SvTDfgpuooZ/dbooks-landing.jpeg)
 
 ## Table of Contents
 
