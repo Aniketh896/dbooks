@@ -85,11 +85,12 @@ npm start
 
 ## License
 
-Distributed under the MIT License.
-Project Link: [https://github.com/Aniketh896/dbooks](https://github.com/Aniketh896/dbooks)
+Distributed under the MIT License.<br>
+You can find the license [here.](https://github.com/Aniketh896/dbooks/blob/main/LICENSE)
+
 ## Project contributors
-- Aniketh Hotagi
-- Abdul Mateen
-- Adarsh A Nair
-- Abhishek Kumar Singh
+- [Aniketh Hotagi](https://github.com/Aniketh896)
+- [Abdul Mateen](https://github.com/theabdulmateen)
+- [Adarsh A Nair](https://github.com/Adarshxinferno)
+- [Abhishek Kumar Singh](https://github.com/abhishek-99ks)
 
