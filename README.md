@@ -1,6 +1,8 @@
 # **dbooks**
 
-> An experimental deployed version is available [here](https://dbooks.netlify.app/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/beaede12-d0bd-4b3e-8bc4-b55dae4cb3ed/deploy-status)](https://app.netlify.com/sites/dbooks/deploys)
+> An experimental deployed version is available [here](https://dbooks.netlify.app/)<br>
+
 
 ![DBOOKS](https://ipfs.io/ipfs/QmbT7AkgMLkffSYY4V4TvLD6UoTXJnEw4n5SvTDfgpuooZ/dbooks-landing.jpeg)
 
